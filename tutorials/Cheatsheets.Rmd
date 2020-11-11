@@ -1,0 +1,20 @@
+---
+title: "Cheatsheets"
+output: 
+  html_document:
+    theme: cosmo
+---
+
+<!--html_preserve-->
+
+<div class="row pt-5">
+<div class="col-md-7">
+<h3 id="data-importcheatsheet">Data Import Cheatsheet</h3>
+<p>The Data Import cheatsheet reminds you how to read in flat files with <a href="http://readr.tidyverse.org/,">http://readr.tidyverse.org/,</a> work with the results as tibbles, and reshape messy data with <a href="http://tidyr.tidyverse.org/">tidyr</a>. Use tidyr to reshape your tables into tidy data, the data format that works the most seamlessly with R and the <a href="http://tidyverse.org/">tidyverse</a>. Updated January 17.</p>
+<p><a href="https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf" class="btn btn-primary">Download</a></p>
+</div>
+<div class="col-md-5">
+<a href="https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf"> <img class="cheatsheet-img" style="width:100%" src="https://d33wubrfki0l68.cloudfront.net/b7142a24f47a959b8a4b67910c67db8b41036f28/ac9a2/wp-content/uploads/2018/08/data-import.png"></a>
+</div>
+</div>
+<!--/html_preserve-->

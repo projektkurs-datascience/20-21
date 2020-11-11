@@ -1,0 +1,100 @@
+---
+title: "Folien für Lehrvideos und Live-Veranstaltungen"
+output: html_document
+---
+
+```{r setup, include = FALSE, cache = FALSE}
+knitr::opts_chunk$set(error = TRUE, comment = NA, warnings = FALSE, errors = FALSE, messages = FALSE, tidy = FALSE, echo = FALSE)
+```
+
+Die folgenden Bücher sind **kostenfrei**, können **online** gelesen werden und dienen als Referenz für Themengebiete im Projektkurs
+
+- Modern Dive: http://moderndive.com
+- R for Data Science: http://r4ds.had.co.nz
+- Introduction to Data Science: https://rafalab.github.io/dsbook/
+
+## Folien der Lehrvideos {.tabset}
+
+### 02: RMarkdown
+
+```{r}
+knitr::include_url("slides/rmarkdown.html")
+```
+
+- R for Data Science, Workflow: http://r4ds.had.co.nz/workflow-basics.html
+
+- Modern Dive, Kapitel zu Getting Started: http://moderndive.com/2-getting-started.html
+
+- R & RStudio Basics: https://bookdown.org/chesterismay/rbasics/3-rstudiobasics.html
+
+- RStudio IDE Cheatsheet: https://github.com/rstudio/cheatsheets/blob/master/rstudio-ide.pdf
+
+
+### 02: Datentype in R
+
+```{r}
+knitr::include_url("slides/data-types.html")
+```
+
+- R for Data Science, Data Visualization Chapter: http://r4ds.had.co.nz/data-visualisation.html
+
+- Modern Dive, Data Visualization Chapter: http://moderndive.com/3-viz.html
+
+- RStudio `ggplot2` Cheatsheet: https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf
+
+### 03: Programming Basics
+
+```{r}
+knitr::include_url("slides/programming-basics.html")
+```
+
+### 04: Vektorarithmetik
+
+```{r}
+knitr::include_url("slides/vector-arithmetics.html")
+```
+
+### 05: Daten in R importieren
+
+```{r}
+knitr::include_url("slides/import-data.html")
+```
+
+### 06: Daten in die richtige Form bringen
+
+```{r}
+knitr::include_url("slides/reshape-data.html")
+```
+
+### 07: Einführung in die Datenaufbereitung
+
+```{r}
+knitr::include_url("slides/data-wrangling-intro.html")
+```
+
+### 08: Datensätze zusammenführen
+
+```{r}
+knitr::include_url("slides/combine-tables.html")
+```
+
+### 09: Datum und Uhrzeit in R
+
+```{r}
+knitr::include_url("slides/dates-and-time.html")
+```
+
+
+## Vorlesungsfolien der Live-Veranstaltungen {.tabset}
+
+### 01: Einführung und Begrüßung
+
+```{r}
+knitr::include_url("slides/intro_projektkurs_data-science.html")
+```
+
+### 02: Erster Teil der Case-Study 
+
+```{r}
+knitr::include_url("slides/VL_case-study-Teil1.html")
+```
