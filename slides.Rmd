@@ -16,7 +16,7 @@ Die folgenden Bücher sind **kostenfrei**, können **online** gelesen werden und
 
 ## Folien der Lehrvideos {.tabset}
 
-<button name="button" onclick="slides/pdf_downloads.html">Folien als PDF herunterladen</button>
+[Folien als PDF herunterladen](pdf_downloads.html)
 
 <br></br>
 

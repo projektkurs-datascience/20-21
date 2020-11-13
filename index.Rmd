@@ -21,4 +21,4 @@ Lerninhalte der Veranstaltung sind: Tiefgreifende, praktische Erfahrungen in der
 
 # Download der Folien
 
-- Einführungveranstaltung ( [HTML](slides/intro_projektkurs_data-science.html) | [PDF](slides/intro_projektkurs_data-science.pdf) )
+[Falls Sie möchten können Sie die Folien auch als PDF herunterladen.](pdf_downloads.html)
