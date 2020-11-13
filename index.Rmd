@@ -18,3 +18,7 @@ Lerninhalte der Veranstaltung sind: Tiefgreifende, praktische Erfahrungen in der
 - [Die Vorlesungsbegleitende Case-Study finden Sie hier](case-study-index.html)
 - [Die für die Veranstaltung zu bearbeitenden RTutor Problem Sets finden Sie hier]()
 - [Weitere Tutorials, wie z.B. die Installation von R und RStudio, Github Setup etc. finden Sie hier]()
+
+# Download der Folien
+
+- Einführungveranstaltung ( [HTML](slides/intro_projektkurs_data-science.html) | [PDF](slides/intro_projektkurs_data-science.pdf) )
