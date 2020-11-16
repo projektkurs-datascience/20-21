@@ -15,9 +15,11 @@ navbar:
   - text: RTutor-Problem-Sets
     menu:
       - text: "Problem Set 1"
-        href: github
+        href: https://github.com/projektkurs-datascience/20-21/tree/main/problem-sets/ps1
       - text: "Problem Set 2"
-        href: page-a.html
+        href: https://github.com/projektkurs-datascience/20-21/tree/main/problem-sets/ps2
+      - text: "Problem Set 3"
+        href: https://github.com/projektkurs-datascience/20-21/tree/main/problem-sets/ps3
   - text: Tutorials
     icon: fa-users
     menu:
@@ -33,7 +35,7 @@ navbar:
     href: https://moodle.uni-ulm.de/course/view.php?id=15914
   right:
   - icon: fa-github fa-lg
-    href: https://github.com/rstudio/flexdashboard
+    href: https://github.com/projektkurs-datascience/20-21
   - icon: fa-info
     href: about.html
 
