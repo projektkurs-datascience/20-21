@@ -105,7 +105,7 @@ knitr::include_url("slides/Visualisierung_mit_ggplot2.html")
 ### 11: Visualisierungsguidelines
 
 ```{r}
-knitr::include_url("slides/Visualisierungs-Guidelines.html")
+knitr::include_url("slides/Visualisierung-Guidelines.html")
 ```
 
 - Diese Vorlesungseinheit orientiert sich an einem Vortrag von [Karl Broman](http://kbroman.org/) mit dem Titel: ["Creating effective figures and tables"](https://www.biostat.wisc.edu/~kbroman/presentations/graphs2017.pdf), 
