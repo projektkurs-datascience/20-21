@@ -16,24 +16,6 @@ output:
     includes:
       in_header: style/header.html 
 #xaringan::inf_mr() #[Start Preview -> Type into console]
-
-#output:
-#  xaringan::moon_reader:
-#    css: ["default", "assets/css/my-theme.css", "assets/css/my-fonts.css"]
-#    seal: false 
-#    lib_dir: libs
-#    nature:
-#      highlightStyle: atelier-forest-light
-#      highlightLanguage: ["r", "yaml", "markdown"]
-#      slideNumberFormat: "" 
-#      highlightLines: true
-#      countIncrementalSlides: false
-#      ratio: "16:9"
-#    includes:
-#      in_header: assets/header.html 
-#params:
-#  palette: berlin 
-
 ---
 
 ```{r setup, include=FALSE}
