@@ -12,6 +12,8 @@ navbar:
         href: case-study-index.html
       - text: "Erster Teil der Case-Study"
         href: ./case-study/case_study_germany_1.html
+      - text: "Zweiter Teil der Case-Study"
+        href: ./case-study/case_study_germany_2.html 
   - text: RTutor-Problem-Sets
     menu:
       - text: "Problem Set 1"

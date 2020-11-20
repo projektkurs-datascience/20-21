@@ -128,3 +128,10 @@ knitr::include_url("slides/intro_projektkurs_data-science.html")
 ```{r}
 knitr::include_url("slides/VL_case-study-Teil1.html")
 ```
+
+### 02: Zweiter Teil der Case-Study 
+
+```{r}
+knitr::include_url("slides/VL_case-study-Teil2.html")
+```
+
