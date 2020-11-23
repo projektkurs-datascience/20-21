@@ -200,7 +200,7 @@ bula_data_all %>%
   add_header_above(c(" " = 1, "Arbeitslosenquote" = 2, "BIP pro Kopf" = 2, "Schulden pro Kopf" = 2), align = "c") %>%
   footnote(general = "Wir haben keine Informationen zu Berlin, Hamburg und Bremen bzgl. ihrer Schulden pro Kopf, weshalb sie nicht in der Tabelle aufgeführt wurden.", 
            general_title = "Bitte beachten: ",
-           number = "Die ostdeutschen Bundesländer sind grau hinterlegt.")
+           number = "Die ostdeutschen Bundesländer sind grau hinterlegt.") 
 ```
 
 Was wir hier gut sehen können ist folgendes:
@@ -408,24 +408,24 @@ Noch besser können wir den Effekt der Finanzkrise an der folgenden Grafik sehen
 bip_wachstum <- bip_zeitreihe_namen %>%
   group_by(Regionalschluessel) %>%
   arrange(Regionalschluessel, Jahr) %>%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %>%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %>%
   ungroup() %>%
   group_by(ost_name, Jahr) %>%
-  mutate( durchschnitt = mean(bip_wachstum, na.rm=TRUE)) %>%
+  mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE)) %>%
   ungroup()
 
 bip_wachstum %>%
   filter( Jahr >= 2000 ) %>%
   ggplot() +
-  geom_line(aes(x = Jahr, y = bip_wachstum, group = Regionalschluessel), color = "grey") +
+  geom_line(aes(x = Jahr, y = bip_pro_kopf_wachstum, group = Regionalschluessel), color = "grey") +
   geom_line(aes(x = Jahr, y = durchschnitt, group = Regionalschluessel, color = ost_name)) +
   scale_color_manual(values = c("#D55E00", "#0072B2")) +
   theme_minimal() +
   labs(color = "Durchschnitt der Landkreise",
-       title = "Die Wachstumsrate des BIP von ost- und westdeutschen Landkreisen",
+       title = "Die Wachstumsrate des BIP pro Kopf von ost- und westdeutschen Landkreisen",
        caption = "Quelle: Daten der Statistischen Ämter der Länder und des Bundes.",
        x = "Jahr",
-       y = "Veränderung des BIP") +
+       y = "Veränderung des BIP pro Kopf") +
   theme(legend.position = "none") +
   geom_text(aes(x=2000, y=40, label = "-- Durchschnitt für ostdeutsche Landkreise"), color = "#D55E00", hjust=0, size=4, alpha = 0.1) +
   geom_text(aes(x=2000, y=35, label = "-- Durchschnitt für westdeutsche Landkreise"), color = "#0072B2", hjust=0, size=4, alpha = 0.1)
@@ -658,7 +658,7 @@ Zuerst wollen wir das zuvor berechnete BIP-Wachstum auf das Jahr 2017 einschrän
 ```{r}
 bip_wachstum_2017 <- bip_wachstum %>%
   filter( Jahr == 2017 ) %>%
-  select(Regionalschluessel, bip_wachstum, Jahr)
+  select(Regionalschluessel, bip_pro_kopf_wachstum, Jahr)
 
 gesamtdaten <- left_join(gesamtdaten, bip_wachstum_2017, by = "Regionalschluessel") %>%
   mutate(anteil_schulden = Schulden_gesamt / bip)
@@ -668,7 +668,7 @@ Anschließend erstellen wir ein Streudiagramm, welches die Arbeitslosenquote und
 
 ```{r, message=FALSE}
 gesamtdaten %>%
-  ggplot(aes(x = bip_wachstum, y = alo_quote)) + 
+  ggplot(aes(x = bip_pro_kopf_wachstum, y = alo_quote)) + 
   geom_point() + 
   labs( x = "Wachstum des BIP %", 
         y = "Arbeitslosenquote in %",
@@ -680,7 +680,7 @@ Zuerst fallen die Ausreißer ins Auge. Insbesondere im positiven Bereich gibt es
 
 ```{r, message=FALSE}
 gesamtdaten %>%
-  ggplot(aes(x = bip_wachstum, y = alo_quote, color = ost_name)) + 
+  ggplot(aes(x = bip_pro_kopf_wachstum, y = alo_quote, color = ost_name)) + 
   geom_point() + 
   labs( x = "Wachstum des BIP %", 
         y = "Arbeitslosenquote in %",
@@ -694,7 +694,7 @@ Anhand der Punktewolke könnten wir abschätzen das der Zusammenhang zwischen de
 Wenn wir uns die Korrelation zwischen den zwei Variablen ausgeben lassen, so erhalten wir die erwartete (schwach) negative Korrelation:
 
 ```{r}
-cor(gesamtdaten$alo_quote, gesamtdaten$bip_wachstum,use = "pairwise.complete.obs")
+cor(gesamtdaten$alo_quote, gesamtdaten$bip_pro_kopf_wachstum,use = "pairwise.complete.obs")
 ```
 
 D.h. der von uns in der Grafik vermutete negative Zusammenhang zwischen der Arbeitslosenquote und dem BIP-Wachstum wird durch die Analyse der Korrelation bestätigt.
@@ -736,18 +736,18 @@ Die Korrelation als Zahl an sich hat keine intuitive quantitative Interpretation
 Sie kann uns jedoch dabei helfen stark miteinander korrelierte Variablen in unserem Datensatz ausfindig zu machen. Dies ist insbesondere bei einer späteren Regressionsanalyse hilfreich, wenn es sich um mehrere erklärenden Variablen handelt, welche wir alle in unsere Regression einfließen lassen möchten. Wenn wir beispielsweise eine sehr hohe positive oder negative Korrelation zwischen den erklärenden Variablen `bip_wachstum` und `anteil_schulden` finden würden, dann müssten wir uns überlegen, ob wir beide Variablen mit in unsere spätere Regression aufnehmen (bei einer multiplen linearen Regression). In unserem Fall ist die Korrelation der beiden Variablen jedoch gering:
 
 ```{r}
-cor(gesamtdaten$bip_wachstum, gesamtdaten$anteil_schulden,use = "pairwise.complete.obs")
+cor(gesamtdaten$bip_pro_kopf_wachstum, gesamtdaten$anteil_schulden,use = "pairwise.complete.obs")
 ```
 
 In einer empirischen Ausarbeitung werden Sie i.d.R. keine Schaubilder zur Korrelation der einzelnen Variablen sehen, sondern nur eine Tabelle in der die Korrelationen der Variablen untereinander abgetragen sind. Eine solche Tabelle können Sie auch einfach in R innerhalb des `tidyverse` und mittels des Pakets `corrr` erzeugen:
 
 ```{r}
 korrelationen <- gesamtdaten %>%
-  select(bip_wachstum, anteil_schulden, alo_quote) %>%
+  select(bip_pro_kopf_wachstum, anteil_schulden, alo_quote) %>%
   correlate() %>% # Korrelationen erzeugen
   rearrange() %>%  # Sortieren nach Korrelation
   shave(upper = TRUE) %>% # Oberen Teil der Tabelle abschneiden
-  mutate(rowname = c("1. BIP Wachstum", "2. Anteil Schulden", "3. Arbeitslosenquote")) %>% # Umbenennen der Variablennamen
+  mutate(rowname = c("1. BIP pro Kopf Wachstum", "2. Anteil Schulden", "3. Arbeitslosenquote")) %>% # Umbenennen der Variablennamen
   fashion(decimals = 2, na_print = "") # Abschließende Verschönerungen
 
 korrelationen %>%
