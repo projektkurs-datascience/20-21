@@ -434,8 +434,8 @@ Standardabweichung: 2148€
   - Deutliche regionale Unterschiede
  
 Median: 2081€
-  - Nahe am Mittelwert
-  - Deutet darauf hin das es wenige Landkreise mit sehr extremen Ausreißern gibt
+  - Weiter weg vom Mittelwert
+  - Deutet darauf hin das es einzelne Landkreise mit sehr extremen Ausreißern gibt
 
 ---
 
@@ -612,19 +612,19 @@ bula_data %>%
 .question[Was lernen wir aus der deskriptiven Tabelle?]
 
 --
-- Länder im Süden Deutschlands haben eine sehr niedrige Arbeitslosenquote (<4%)
+- Landkreise im Süden Deutschlands haben durchschnittlich eine sehr niedrige Arbeitslosenquote (<4%)
 --
 
-- Ostdeutsche Bundesländer leider unter hohen Arbeitslosenquoten (>8%)
+- Landkreise in den ostdeutschen Bundesländern leiden unter hohen Arbeitslosenquoten (>8%)
 --
 
 - Standardabweichung bei allen Bundesländern vergleichbar   
-  - Es gibt hier vermutlich keine großen Ausreißer bei den Landkreisen
+  - Es gibt hier vermutlich keine großen Ausreißer bei den Arbeitslosenquoten in den Landkreisen
 
 --
 - Median liegt recht nahe am Mittelwert für die Bundesländern
 
-.alert[Allgemein sehen wir hier sehr große Unterschiede zwischen Ost- und Westdeutschland!]
+.alert[Sehr große Unterschiede in den durchschnittlichen Arbeitslosenquoten zwischen Landkreisen in Ost- und Westdeutschland!]
 
 ---
 
@@ -710,11 +710,11 @@ gesamtdaten %>%
 ## Die Arbeitslosenquote zwischen Ost- und Westdeutschland
 
 Große Unterschiede werden sichtbar:
-- Fast 3 Prozentpunkte niedriger in den westdeutschen Bundesländern
+- Fast 3 Prozentpunkte niedriger in den Landkreisen der westdeutschen Bundesländer
 - Die Standardabweichung ist vergleichbar
-- Der Median liegt in Westdeutschland sogar noch deutlicher unter dem Mittelwert als in Ostdeutschland
-- Im **25% Quantil** in **Ostdeutschland** ist die Arbeitslosenquote bei **6,00%**
-- In **Westdeutschland** ist das **75% Quantil** bei einer Arbeitslosenquote von **6,17%**!
+- Der Median liegt in den westdeutschen Landkreisen sogar noch deutlicher unter dem Mittelwert als in ostdeutschen
+- Im **25% Quantil** in den **ostdeutschen Landkreisen** ist die Arbeitslosenquote bei **6,00%**
+- Bei den **westdeutschen Landkreisen** ist das **75% Quantil** bei einer Arbeitslosenquote von **6,17%**!
 
 ---
 
@@ -794,10 +794,10 @@ bula_data_all %>%
 
 ## Arbeitslosenquote, BIP pro Kopf und Schulden pro Kopf 
 
-- Bundesländer mit niedrigen Arbeitslosenquoten haben ein hohes BIP pro Kopf
-- Ostdeutsche Bundesländer haben alle ein BIP pro Kopf < 30000€
-- Westdeutsche Bundesländer haben alle ein BIP pro Kopf > 30000€
-- Einige Bundesländer mit wenig, einige mit hohen Schulden pro Kopf
+- Landkreise in Bundesländer mit niedrigen Arbeitslosenquoten haben durchschnittlich ein hohes BIP pro Kopf
+- Ostdeutsche Landkreise haben im Durchschnitt ein BIP pro Kopf < 30000€
+- Westdeutsche Landkreise haben im Durchschnitt ein BIP pro Kopf > 30000€
+- Kein klares Bild der Landkreise hinsichtlich der Schulden pro Kopf
 
 --
 
@@ -887,7 +887,7 @@ alo_quote_jitter_farben
 ## Arbeitslosenquote
 
 **Beschreibung** des Schaubilds:
-- Rote Datenpunkte Bade-Württemberg, fast alle unter dem Median in Westdeutschland
+- Rote Datenpunkte Baden-Württemberg, fast alle unter dem Median in Westdeutschland
 - Median in Westdeutschland deutlich geringer als in Ostdeutschland
 - 75% Quantil in Westdeutschland entspricht (fast) 25% Quantil in Ostdeutschland
 - Alle Landkreise unter 15% Arbeitslosenquote; Verglichen mit den europäischen Daten sehr gut
@@ -964,9 +964,9 @@ bip_zeitreihe_namen %>%
 
 **Beschreibung:**
 - Logarithmische Skalierung der y-Achse
-- Das Niveau des BIP pro Kopf ist in den ostdeutschen Bundesländern deutlich niedriger als in den westdeutschen. 
+- Das Niveau des BIP pro Kopf ist in den ostdeutschen Landkreisen deutlich niedriger als in den westdeutschen. 
 - Stadtkreis Ulm hat ein sehr hohes BIP pro Kopf, auch im Zeitablauf
-- Das BIP Pro Kopf nimmt im Zeitablauf in Ostdeutschland zu, doch erreicht es mit durchschnittlich 28338€ den Wert, welchen die westdeutschen Landkreise durchschnittlich in 2006 hatten!
+- Das BIP Pro Kopf nimmt im Zeitablauf in den ostdeutschen Landkreisen zu, doch erreicht es mit durchschnittlich 28338€ den Wert, welchen die westdeutschen Landkreise durchschnittlich in 2006 hatten!
 - In 2008/2009 gibt es überall einen Einbruch beim BIP pro Kopf, jedoch scheint dieser in den ostdeutschen Bundesländern nicht so stark gewesen zu sein
 
 --
@@ -978,19 +978,55 @@ bip_zeitreihe_namen %>%
 
 ---
 
-## Wachstum des BIP
+## Bruttoinlandsprodukt pro Kopf
 
-Paneldaten beim BIP, d.h. wir können:
+Daten ab 1992 vorhanden, d.h. wir können auch weiter zuück gehen:
+- **Allerdings:** Keine Daten zu _allen_ Landkreisen, daher Vorsicht!
+- Hier sehen wir einen Anpassungsprozess in den 1990er Jahren
+- Anpassung verlangsamt sich, ab 2010 praktisch parallel 
 
-- Das Wachstum des BIP
+---
+
+class: center
+
+```{r, echo=FALSE, out.width='50%'}
+bip_zeitreihe_namen %>%
+  group_by(ost_name, Jahr) %>%
+  mutate( durchschnitt = mean(bip_pro_kopf, na.rm = T),
+          ulm = ifelse(landkreis_name == "Ulm", bip_pro_kopf,NA)) %>%
+  ggplot() +
+  geom_line(aes(x = Jahr, y = durchschnitt, group = Regionalschluessel, color = ost_name)) +
+  scale_color_manual(values = c("#D55E00", "#0072B2")) +
+  scale_y_continuous(trans = "log10") + 
+  theme_minimal() +
+  theme(legend.position = "none") +
+  labs(title = "Ein Vergleich des BIP pro Kopf von ost- und westdeutschen Landkreisen",
+       subtitle = "Zeitreihe ab 1992 bis 2017",
+       caption = "Quelle: Daten der Statistischen Ämter der Länder und des Bundes.",
+       x = "Jahr",
+       y = "BIP pro Kopf") +
+  geom_text(aes(x=2000, y=15000, label = "Durchschnitt für ostdeutsche Landkreise"), color = "#D55E00", hjust=0, size=4, alpha = 0.1) +
+  geom_curve(aes(x = 2007, xend = 2005, y = 15500, yend = 18500), curvature = .3, color = "#D55E00", size = 0.1) +
+  geom_text(aes(x=1992, y=31000, label = "Durchschnitt für westdeutsche Landkreise"), color = "#0072B2", hjust=0, size=4, alpha = 0.1) +
+  geom_curve(aes(x = 1995, xend = 1997, y = 29000, yend = 25000), curvature = .2, color = "#0072B2", size = 0.1)
+
+```
+
+---
+
+## Wachstum des BIP pro Kopf
+
+Paneldaten beim BIP pro Kopf vorhanden, d.h. wir können:
+
+- Das **Wachstum** des BIP pro Kopf
 - Für alle Landkreise in Deutschland
 - Seit 2000 bis 2017 
 
-visualisieren.
+berechnen und visualisieren.
 
 --
 
-.question[Gab es einen Anpassungsprozess des BIP pro Kopf?]
+.question[Können wir einen Anpassungsprozess über die Wachstumsraten des BIP pro Kopf feststellen?]
 
 ---
 
@@ -1000,23 +1036,24 @@ visualisieren.
 bip_zeitreihe_namen %>%
   group_by(Regionalschluessel) %>%
   arrange(Regionalschluessel, Jahr) %>%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %>%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %>%
   ungroup() %>%
   group_by(ost_name, Jahr) %>%
-  mutate( durchschnitt = mean(bip_wachstum, na.rm=TRUE)) -> bip_wachstum
+  mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE)) %>%
+  ungroup() -> bip_wachstum
 
 bip_wachstum %>%
   filter( Jahr >= 2000 ) %>%
   ggplot() +
-  geom_line(aes(x = Jahr, y = bip_wachstum, group = Regionalschluessel), color = "grey") +
+  geom_line(aes(x = Jahr, y = bip_pro_kopf_wachstum, group = Regionalschluessel), color = "grey") +
   geom_line(aes(x = Jahr, y = durchschnitt, group = Regionalschluessel, color = ost_name)) +
   scale_color_manual(values = c("#D55E00", "#0072B2")) +
   theme_minimal() +
   labs(color = "Durchschnitt der Landkreise",
-       title = "Die Wachstumsrate des BIP von ost- und westdeutschen Landkreisen",
+       title = "Die Wachstumsrate des BIP pro Kopf von ost- und westdeutschen\nLandkreisen",
        caption = "Quelle: Daten der Statistischen Ämter der Länder und des Bundes.",
        x = "Jahr",
-       y = "Veränderung des BIP") +
+       y = "Veränderung des BIP pro Kopf") +
   theme(legend.position = "none") +
   geom_text(aes(x=2000, y=40, label = "-- Durchschnitt für ostdeutsche Landkreise"), color = "#D55E00", hjust=0, size=4, alpha = 0.1) +
   geom_text(aes(x=2000, y=35, label = "-- Durchschnitt für westdeutsche Landkreise"), color = "#0072B2", hjust=0, size=4, alpha = 0.1)
@@ -1046,6 +1083,11 @@ bip_wachstum %>%
 
 ## Verteilung des BIP pro Kopf in 2017
 
+
+---
+ 
+## Bruttoinlandsprodukt pro Kopf
+
 Bisherige Grafiken:
 - Punktewolke + Boxplot zeigt die Verteilung
 - Liniendiagramm zeigt die Entwicklung
@@ -1054,7 +1096,7 @@ Bisherige Grafiken:
 
 Alternative Darstellungen der Verteilung:
 - Historgamm (nächste Folie)
-- Kerndichteschätzer (übernächste Folie)
+- Kerndichteschätzer (siehe ausführliche Case-Study)
 
 Alternative Darstellung der Entwicklung:
 - Small multiples (siehe ausführliche Case-Study)
@@ -1084,35 +1126,9 @@ ggplot(gesamtdaten, aes(x = bip_pro_kopf)) +
 
 ---
 
-`r chunk_reveal(chunk_name = "bip4")`
-
-```{r bip4, include=FALSE}
-gesamtdaten %>%
-  filter(bip_pro_kopf<100000) %>%
-  group_by(ost_name) %>%
-  summarise(durchschnitt = mean(bip_pro_kopf), median = median(bip_pro_kopf)) %>%
-  ungroup() -> mittel2
-
-gesamtdaten %>%
-  ggplot(aes(x = bip_pro_kopf)) +
-  geom_density(data = filter(gesamtdaten, bip_pro_kopf<100000), kernel = "gaussian", bw = 1000) +
-  facet_grid(ost_name~.) +
-  geom_vline(data = mittel2, aes(xintercept = durchschnitt), color = "blue") +
-  geom_vline(data = mittel2, aes(xintercept = median), color = "darkgreen") +
-  theme_bw() +
-  labs(title = "Verteilung des BIP pro Kopf für Ost- und Westdeutschland",
-       subtitle = "Beobachtungen auf Landkreisebene in 2017, Durchschnitt = blau,\nMedian = grün",
-       x = "BIP pro Kopf",
-       y = "Dichte")
-
-```
-
----
-
 ## Verteilung des BIP pro Kopf in 2017
 
-.pull-left[
-```{r, echo=FALSE, dpi = 300, out.width='70%'}
+```{r, echo=FALSE, dpi = 300, out.width='40%'}
 gesamtdaten %>%
   filter(bip_pro_kopf<100000) %>%
   group_by(ost_name) %>%
@@ -1130,37 +1146,11 @@ ggplot(gesamtdaten, aes(x = bip_pro_kopf)) +
        y = "Anzahl an Beobachtungen")
 ```
 
-]
-
-.pull-right[
-```{r, echo=FALSE, dpi = 300, out.width='70%'}
-gesamtdaten %>%
-  filter(bip_pro_kopf<100000) %>%
-  group_by(ost_name) %>%
-  summarise(durchschnitt = mean(bip_pro_kopf), median = median(bip_pro_kopf)) %>%
-  ungroup() -> mittel2
-
-gesamtdaten %>%
-  ggplot(aes(x = bip_pro_kopf)) +
-  geom_density(data = filter(gesamtdaten, bip_pro_kopf<100000), kernel = "gaussian", bw = 1000) +
-  facet_grid(ost_name~.) +
-  geom_vline(data = mittel2, aes(xintercept = durchschnitt), color = "blue") +
-  geom_vline(data = mittel2, aes(xintercept = median), color = "darkgreen") +
-  theme_bw() +
-  labs(title = "Verteilung des BIP pro Kopf für Ost- und Westdeutschland",
-       subtitle = "Beobachtungen auf Landkreisebene in 2017, Durchschnitt = blau,\nMedian = grün",
-       x = "BIP pro Kopf",
-       y = "Dichte")
-
-```
-
-]
-
 ---
 
 ## Verteilung des BIP pro Kopf in 2017
 
-Kendichteschätzer und Histogramm bestätigen das Bild des Boxplots:
+Das Histogramm bestätigen das Bild des Boxplots:
 - Deutliche Unterschiede zwischen ost- und westdeutschend Landkreisen in 2017
 - Deutlich mehr Ausreißer nach oben bei westdeutschen Landkreisen
 - Verteilung ist für ostdeutsche Landkreise enger um den Mittelwert für das BIP pro Kopf von 28338€
@@ -1357,16 +1347,16 @@ $\rho$ wird üblicherweise genutzt um den Korrelationskoeffizienten zu bezeichne
 
 --
 
-.question[Wie hängt die Arbeitslosenquote in den einzelnen Landkreisen mit deren BIP-Wachstum zusammen?]
+.question[Wie hängt die Arbeitslosenquote in den einzelnen Landkreisen mit deren BIP-pro-Kopf-Wachstum zusammen?]
 
 ---
 
-## Korrelation zwischen Arbeitslosenquote und BIP-Wachstum
+## Korrelation zwischen Arbeitslosenquote und BIP-pro-Kopf-Wachstum
 
 Wir können uns die oben beschriebene Formel bzgl. des Zusammenhangs von zwei Variablen immer auch grafisch verdeutlichen
 
 - Wir haben zwei Dimensionen
-  - Variable x: BIP-Wachstum
+  - Variable x: BIP-pro-Kopf-Wachstum
   - Variable y: Arbeitslosenquote
 
 Im Streudiagramm können wir Variable x auf der x-Achse und Variable y auf der y-Achse abtragen
@@ -1376,7 +1366,7 @@ Im Streudiagramm können wir Variable x auf der x-Achse und Variable y auf der y
 ```{r, echo=FALSE}
 bip_wachstum_2017 <- bip_wachstum %>%
   filter( Jahr == 2017 ) %>%
-  select(Regionalschluessel, bip_wachstum, Jahr)
+  select(Regionalschluessel, bip_pro_kopf_wachstum, Jahr)
 
 gesamtdaten <- left_join(gesamtdaten, bip_wachstum_2017, by = "Regionalschluessel") %>%
   mutate(anteil_schulden = Schulden_gesamt / bip)
@@ -1386,7 +1376,7 @@ gesamtdaten <- left_join(gesamtdaten, bip_wachstum_2017, by = "Regionalschluesse
 
 ```{r cor1, include=FALSE}
 gesamtdaten %>%
-  ggplot(aes(x = bip_wachstum, y = alo_quote)) + 
+  ggplot(aes(x = bip_pro_kopf_wachstum, y = alo_quote)) + 
   geom_point() + 
   labs( x = "Wachstum des BIP %", 
         y = "Arbeitslosenquote in %",
@@ -1407,7 +1397,7 @@ Korrelationskoeffizient:
 
 ```{r}
 cor(gesamtdaten$alo_quote, 
-    gesamtdaten$bip_wachstum,
+    gesamtdaten$bip_pro_kopf_wachstum,
     use = "pairwise.complete.obs")
 ```
 

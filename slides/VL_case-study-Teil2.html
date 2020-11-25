@@ -332,7 +332,7 @@ gesamtdaten %&gt;%
    &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; factor &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; character &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
@@ -371,30 +371,9 @@ Hierbei handelt es sich um alle Landkreise und kreisfreien Städte in Deutschlan
 ## Anzahl an Beobachtungen
 
 
-**Variable type: factor**
-
-&lt;table&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:left;"&gt; skim_variable &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; n_missing &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; complete_rate &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; ordered &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; n_unique &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; top_counts &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; landkreis_name &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; FALSE &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 379 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Ans: 2, Asc: 2, Aug: 2, Bam: 2 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+```
+## NULL
+```
 
 - Nur 379 unterschiedliche Landkreis Namen in unserem Datensatz mit 401 unterschiedlichen Beobachtungen (Regionalschlüsseln). 
 
@@ -489,7 +468,7 @@ gesamtdaten %&gt;%
 ```
 ## # A tibble: 4 x 1
 ##   landkreis_name
-##   &lt;fct&gt;         
+##   &lt;chr&gt;         
 ## 1 Hamburg       
 ## 2 Bremen        
 ## 3 Bremerhaven   
@@ -573,7 +552,7 @@ Gehen Sie hierbei bitte auf eine Variable (alo_quote, Schulden_pro_Kopf_lk, bip_
 
 --
 
-<div class="countdown" id="timer_5fb7781f" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5fbe332f" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -608,8 +587,8 @@ Standardabweichung: 2148€
   - Deutliche regionale Unterschiede
  
 Median: 2081€
-  - Nahe am Mittelwert
-  - Deutet darauf hin das es wenige Landkreise mit sehr extremen Ausreißern gibt
+  - Weiter weg vom Mittelwert
+  - Deutet darauf hin das es einzelne Landkreise mit sehr extremen Ausreißern gibt
 
 ---
 
@@ -682,7 +661,7 @@ count: false
 ```
 ## # A tibble: 401 x 12
 ##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
+##    &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;          
 ##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
 ##  2 01002                12345 Kiel           01         Schleswig-Hols…
 ##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
@@ -717,7 +696,7 @@ gesamtdaten %&gt;%
 ## # A tibble: 401 x 12
 ## # Groups:   bundesland_name [16]
 ##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
+##    &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;          
 ##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
 ##  2 01002                12345 Kiel           01         Schleswig-Hols…
 ##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
@@ -754,7 +733,7 @@ gesamtdaten %&gt;%
 ```
 ## # A tibble: 16 x 4
 ##    bundesland_name        mean_alo sd_alo median_alo
-##    &lt;fct&gt;                     &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;
+##    &lt;chr&gt;                     &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;
 ##  1 Baden-Württemberg          3.31  0.642       3.33
 ##  2 Bayern                     3.04  0.775       2.98
 ##  3 Berlin                    NA    NA          NA   
@@ -836,7 +815,7 @@ Anschließend wollen wir uns eine ansprechende und informative deskriptive Tabel
 ```
 ## # A tibble: 14 x 4
 ##    bundesland_name        mean_alo sd_alo median_alo
-##    &lt;fct&gt;                     &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;
+##    &lt;chr&gt;                     &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;
 ##  1 Bayern                     3.04  0.775       2.98
 ##  2 Baden-Württemberg          3.31  0.642       3.33
 ##  3 Hessen                     5.02  1.34        5.11
@@ -1009,7 +988,7 @@ count: false
 ```
 ## # A tibble: 16 x 4
 ##    bundesland_name        mean_alo sd_alo median_alo
-##    &lt;fct&gt;                     &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;
+##    &lt;chr&gt;                     &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;
 ##  1 Baden-Württemberg          3.31  0.642       3.33
 ##  2 Bayern                     3.04  0.775       2.98
 ##  3 Berlin                    NA    NA          NA   
@@ -1046,7 +1025,7 @@ bula_data %&gt;%
 ```
 ## # A tibble: 16 x 4
 ##    bundesland_name        mean_alo sd_alo median_alo
-##    &lt;fct&gt;                     &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;
+##    &lt;chr&gt;                     &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;
 ##  1 Bayern                     3.04  0.775       2.98
 ##  2 Baden-Württemberg          3.31  0.642       3.33
 ##  3 Hessen                     5.02  1.34        5.11
@@ -1084,7 +1063,7 @@ bula_data %&gt;%
 ```
 ## # A tibble: 14 x 4
 ##    bundesland_name        mean_alo sd_alo median_alo
-##    &lt;fct&gt;                     &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;
+##    &lt;chr&gt;                     &lt;dbl&gt;  &lt;dbl&gt;      &lt;dbl&gt;
 ##  1 Bayern                     3.04  0.775       2.98
 ##  2 Baden-Württemberg          3.31  0.642       3.33
 ##  3 Hessen                     5.02  1.34        5.11
@@ -1978,19 +1957,19 @@ bula_data %&gt;%
 .question[Was lernen wir aus der deskriptiven Tabelle?]
 
 --
-- Länder im Süden Deutschlands haben eine sehr niedrige Arbeitslosenquote (&lt;4%)
+- Landkreise im Süden Deutschlands haben durchschnittlich eine sehr niedrige Arbeitslosenquote (&lt;4%)
 --
 
-- Ostdeutsche Bundesländer leider unter hohen Arbeitslosenquoten (&gt;8%)
+- Landkreise in den ostdeutschen Bundesländern leiden unter hohen Arbeitslosenquoten (&gt;8%)
 --
 
 - Standardabweichung bei allen Bundesländern vergleichbar   
-  - Es gibt hier vermutlich keine großen Ausreißer bei den Landkreisen
+  - Es gibt hier vermutlich keine großen Ausreißer bei den Arbeitslosenquoten in den Landkreisen
 
 --
 - Median liegt recht nahe am Mittelwert für die Bundesländern
 
-.alert[Allgemein sehen wir hier sehr große Unterschiede zwischen Ost- und Westdeutschland!]
+.alert[Sehr große Unterschiede in den durchschnittlichen Arbeitslosenquoten zwischen Landkreisen in Ost- und Westdeutschland!]
 
 ---
 
@@ -2023,7 +2002,7 @@ count: false
 ```
 ## # A tibble: 401 x 12
 ##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
+##    &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;          
 ##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
 ##  2 01002                12345 Kiel           01         Schleswig-Hols…
 ##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
@@ -2058,7 +2037,7 @@ gesamtdaten %&gt;%
 ```
 ## # A tibble: 401 x 14
 ##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
+##    &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;          
 ##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
 ##  2 01002                12345 Kiel           01         Schleswig-Hols…
 ##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
@@ -2150,7 +2129,7 @@ count: false
 ```
 ## # A tibble: 401 x 14
 ##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
+##    &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;          
 ##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
 ##  2 01002                12345 Kiel           01         Schleswig-Hols…
 ##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
@@ -2185,7 +2164,7 @@ gesamtdaten %&gt;%
 ## # A tibble: 401 x 14
 ## # Groups:   ost_name [2]
 ##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
+##    &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;          
 ##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
 ##  2 01002                12345 Kiel           01         Schleswig-Hols…
 ##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
@@ -2616,11 +2595,11 @@ gesamtdaten %&gt;%
 ## Die Arbeitslosenquote zwischen Ost- und Westdeutschland
 
 Große Unterschiede werden sichtbar:
-- Fast 3 Prozentpunkte niedriger in den westdeutschen Bundesländern
+- Fast 3 Prozentpunkte niedriger in den Landkreisen der westdeutschen Bundesländer
 - Die Standardabweichung ist vergleichbar
-- Der Median liegt in Westdeutschland sogar noch deutlicher unter dem Mittelwert als in Ostdeutschland
-- Im **25% Quantil** in **Ostdeutschland** ist die Arbeitslosenquote bei **6,00%**
-- In **Westdeutschland** ist das **75% Quantil** bei einer Arbeitslosenquote von **6,17%**!
+- Der Median liegt in den westdeutschen Landkreisen sogar noch deutlicher unter dem Mittelwert als in ostdeutschen
+- Im **25% Quantil** in den **ostdeutschen Landkreisen** ist die Arbeitslosenquote bei **6,00%**
+- Bei den **westdeutschen Landkreisen** ist das **75% Quantil** bei einer Arbeitslosenquote von **6,17%**!
 
 ---
 
@@ -2664,7 +2643,7 @@ count: false
 ```
 ## # A tibble: 401 x 14
 ##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
+##    &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;          
 ##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
 ##  2 01002                12345 Kiel           01         Schleswig-Hols…
 ##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
@@ -2699,7 +2678,7 @@ gesamtdaten %&gt;%
 ## # A tibble: 401 x 14
 ## # Groups:   bundesland_name [16]
 ##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
+##    &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;          
 ##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
 ##  2 01002                12345 Kiel           01         Schleswig-Hols…
 ##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
@@ -2734,7 +2713,7 @@ gesamtdaten %&gt;%
 ```
 ## # A tibble: 16 x 7
 ##    bundesland_name mean_alo sd_alo mean_bip_kopf sd_bip_kopf mean_schulden_k…
-##    &lt;fct&gt;              &lt;dbl&gt;  &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;
+##    &lt;chr&gt;              &lt;dbl&gt;  &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;
 ##  1 Baden-Württemb…     3.31  0.642        43658.      12454.            2185.
 ##  2 Bayern              3.04  0.775        43002.      19977.            1897.
 ##  3 Berlin             NA    NA               NA          NA               NA 
@@ -2794,7 +2773,7 @@ gesamtdaten %&gt;%
 ```
 ## # A tibble: 16 x 7
 ##    bundesland_name mean_alo sd_alo mean_bip_kopf sd_bip_kopf mean_schulden_k…
-##    &lt;fct&gt;              &lt;dbl&gt;  &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;
+##    &lt;chr&gt;              &lt;dbl&gt;  &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;
 ##  1 Baden-Württemb…     3.31  0.642        43658.      12454.            2185.
 ##  2 Bayern              3.04  0.775        43002.      19977.            1897.
 ##  3 Berlin             NA    NA               NA          NA               NA 
@@ -2837,7 +2816,7 @@ bula_data_all %&gt;%
 ```
 ## # A tibble: 16 x 7
 ##    bundesland_name mean_alo sd_alo mean_bip_kopf sd_bip_kopf mean_schulden_k…
-##    &lt;fct&gt;              &lt;dbl&gt;  &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;
+##    &lt;chr&gt;              &lt;dbl&gt;  &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;
 ##  1 Bayern              3.04  0.775        43002.      19977.            1897.
 ##  2 Baden-Württemb…     3.31  0.642        43658.      12454.            2185.
 ##  3 Hessen              5.02  1.34         40203.      16477.            3731.
@@ -2881,7 +2860,7 @@ bula_data_all %&gt;%
 ```
 ## # A tibble: 13 x 7
 ##    bundesland_name mean_alo sd_alo mean_bip_kopf sd_bip_kopf mean_schulden_k…
-##    &lt;fct&gt;              &lt;dbl&gt;  &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;
+##    &lt;chr&gt;              &lt;dbl&gt;  &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;
 ##  1 Bayern              3.04  0.775        43002.      19977.            1897.
 ##  2 Baden-Württemb…     3.31  0.642        43658.      12454.            2185.
 ##  3 Hessen              5.02  1.34         40203.      16477.            3731.
@@ -4062,10 +4041,10 @@ bula_data_all %&gt;%
 
 ## Arbeitslosenquote, BIP pro Kopf und Schulden pro Kopf 
 
-- Bundesländer mit niedrigen Arbeitslosenquoten haben ein hohes BIP pro Kopf
-- Ostdeutsche Bundesländer haben alle ein BIP pro Kopf &lt; 30000€
-- Westdeutsche Bundesländer haben alle ein BIP pro Kopf &gt; 30000€
-- Einige Bundesländer mit wenig, einige mit hohen Schulden pro Kopf
+- Landkreise in Bundesländer mit niedrigen Arbeitslosenquoten haben durchschnittlich ein hohes BIP pro Kopf
+- Ostdeutsche Landkreise haben im Durchschnitt ein BIP pro Kopf &lt; 30000€
+- Westdeutsche Landkreise haben im Durchschnitt ein BIP pro Kopf &gt; 30000€
+- Kein klares Bild der Landkreise hinsichtlich der Schulden pro Kopf
 
 --
 
@@ -4121,7 +4100,7 @@ count: false
 ```
 ## # A tibble: 401 x 14
 ##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
+##    &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;          
 ##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
 ##  2 01002                12345 Kiel           01         Schleswig-Hols…
 ##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
@@ -4155,7 +4134,7 @@ gesamtdaten %&gt;%
 ```
 ## # A tibble: 401 x 4
 ##    alo_quote landkreis_name      bundesland_name    ost_name       
-##        &lt;dbl&gt; &lt;fct&gt;               &lt;fct&gt;              &lt;chr&gt;          
+##        &lt;dbl&gt; &lt;chr&gt;               &lt;chr&gt;              &lt;chr&gt;          
 ##  1      6.99 Flensburg           Schleswig-Holstein Westdeutschland
 ##  2      6.64 Kiel                Schleswig-Holstein Westdeutschland
 ##  3      7.02 Lübeck              Schleswig-Holstein Westdeutschland
@@ -4188,7 +4167,7 @@ gesamtdaten %&gt;%
 ```
 ## # A tibble: 401 x 5
 ##    alo_quote landkreis_name     bundesland_name   ost_name     baden_wuerttembe…
-##        &lt;dbl&gt; &lt;fct&gt;              &lt;fct&gt;             &lt;chr&gt;        &lt;fct&gt;            
+##        &lt;dbl&gt; &lt;chr&gt;              &lt;chr&gt;             &lt;chr&gt;        &lt;fct&gt;            
 ##  1      6.99 Flensburg          Schleswig-Holste… Westdeutsch… 0                
 ##  2      6.64 Kiel               Schleswig-Holste… Westdeutsch… 0                
 ##  3      7.02 Lübeck             Schleswig-Holste… Westdeutsch… 0                
@@ -4376,7 +4355,7 @@ gesamtdaten %&gt;%
 ## Arbeitslosenquote
 
 **Beschreibung** des Schaubilds:
-- Rote Datenpunkte Bade-Württemberg, fast alle unter dem Median in Westdeutschland
+- Rote Datenpunkte Baden-Württemberg, fast alle unter dem Median in Westdeutschland
 - Median in Westdeutschland deutlich geringer als in Ostdeutschland
 - 75% Quantil in Westdeutschland entspricht (fast) 25% Quantil in Ostdeutschland
 - Alle Landkreise unter 15% Arbeitslosenquote; Verglichen mit den europäischen Daten sehr gut
@@ -4446,7 +4425,7 @@ options(scipen = 5)
 ```
 ## # A tibble: 9,975 x 8
 ##    Regionalschlues…  Jahr     bip einwohner bip_pro_kopf bundesland_name
-##    &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;fct&gt;          
+##    &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;          
 ##  1 08111             1992 3.20e10    593628       53930. Baden-Württemb…
 ##  2 08115             1992 1.20e10    343190       34900. Baden-Württemb…
 ##  3 08116             1992 1.22e10    487370       25057. Baden-Württemb…
@@ -4457,7 +4436,7 @@ options(scipen = 5)
 ##  8 08125             1992 6.11e 9    283163       21585. Baden-Württemb…
 ##  9 08126             1992 2.29e 9     96072       23797. Baden-Württemb…
 ## 10 08127             1992 3.49e 9    169617       20551. Baden-Württemb…
-## # … with 9,965 more rows, and 2 more variables: landkreis_name &lt;fct&gt;,
+## # … with 9,965 more rows, and 2 more variables: landkreis_name &lt;chr&gt;,
 ## #   ost_name &lt;chr&gt;
 ```
 ]
@@ -4480,7 +4459,7 @@ bip_zeitreihe_namen %&gt;%
 ```
 ## # A tibble: 7,182 x 8
 ##    Regionalschlues…  Jahr     bip einwohner bip_pro_kopf bundesland_name
-##    &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;fct&gt;          
+##    &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;          
 ##  1 08111             2000 3.43e10    571528       59965. Baden-Württemb…
 ##  2 08115             2000 1.38e10    359476       38259. Baden-Württemb…
 ##  3 08116             2000 1.44e10    492914       29224. Baden-Württemb…
@@ -4491,7 +4470,7 @@ bip_zeitreihe_namen %&gt;%
 ##  8 08125             2000 8.57e 9    316406       27075. Baden-Württemb…
 ##  9 08126             2000 3.12e 9    106494       29305. Baden-Württemb…
 ## 10 08127             2000 4.60e 9    184222       24984. Baden-Württemb…
-## # … with 7,172 more rows, and 2 more variables: landkreis_name &lt;fct&gt;,
+## # … with 7,172 more rows, and 2 more variables: landkreis_name &lt;chr&gt;,
 ## #   ost_name &lt;chr&gt;
 ```
 ]
@@ -4516,7 +4495,7 @@ bip_zeitreihe_namen %&gt;%
 ## # A tibble: 7,182 x 8
 ## # Groups:   ost_name, Jahr [36]
 ##    Regionalschlues…  Jahr     bip einwohner bip_pro_kopf bundesland_name
-##    &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;fct&gt;          
+##    &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;          
 ##  1 08111             2000 3.43e10    571528       59965. Baden-Württemb…
 ##  2 08115             2000 1.38e10    359476       38259. Baden-Württemb…
 ##  3 08116             2000 1.44e10    492914       29224. Baden-Württemb…
@@ -4527,7 +4506,7 @@ bip_zeitreihe_namen %&gt;%
 ##  8 08125             2000 8.57e 9    316406       27075. Baden-Württemb…
 ##  9 08126             2000 3.12e 9    106494       29305. Baden-Württemb…
 ## 10 08127             2000 4.60e 9    184222       24984. Baden-Württemb…
-## # … with 7,172 more rows, and 2 more variables: landkreis_name &lt;fct&gt;,
+## # … with 7,172 more rows, and 2 more variables: landkreis_name &lt;chr&gt;,
 ## #   ost_name &lt;chr&gt;
 ```
 ]
@@ -4554,7 +4533,7 @@ bip_zeitreihe_namen %&gt;%
 ## # A tibble: 7,182 x 10
 ## # Groups:   ost_name, Jahr [36]
 ##    Regionalschlues…  Jahr     bip einwohner bip_pro_kopf bundesland_name
-##    &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;fct&gt;          
+##    &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;          
 ##  1 08111             2000 3.43e10    571528       59965. Baden-Württemb…
 ##  2 08115             2000 1.38e10    359476       38259. Baden-Württemb…
 ##  3 08116             2000 1.44e10    492914       29224. Baden-Württemb…
@@ -4565,7 +4544,7 @@ bip_zeitreihe_namen %&gt;%
 ##  8 08125             2000 8.57e 9    316406       27075. Baden-Württemb…
 ##  9 08126             2000 3.12e 9    106494       29305. Baden-Württemb…
 ## 10 08127             2000 4.60e 9    184222       24984. Baden-Württemb…
-## # … with 7,172 more rows, and 4 more variables: landkreis_name &lt;fct&gt;,
+## # … with 7,172 more rows, and 4 more variables: landkreis_name &lt;chr&gt;,
 ## #   ost_name &lt;chr&gt;, durchschnitt &lt;dbl&gt;, ulm &lt;dbl&gt;
 ```
 ]
@@ -4836,9 +4815,9 @@ bip_zeitreihe_namen %&gt;%
 
 **Beschreibung:**
 - Logarithmische Skalierung der y-Achse
-- Das Niveau des BIP pro Kopf ist in den ostdeutschen Bundesländern deutlich niedriger als in den westdeutschen. 
+- Das Niveau des BIP pro Kopf ist in den ostdeutschen Landkreisen deutlich niedriger als in den westdeutschen. 
 - Stadtkreis Ulm hat ein sehr hohes BIP pro Kopf, auch im Zeitablauf
-- Das BIP Pro Kopf nimmt im Zeitablauf in Ostdeutschland zu, doch erreicht es mit durchschnittlich 28338€ den Wert, welchen die westdeutschen Landkreise durchschnittlich in 2006 hatten!
+- Das BIP Pro Kopf nimmt im Zeitablauf in den ostdeutschen Landkreisen zu, doch erreicht es mit durchschnittlich 28338€ den Wert, welchen die westdeutschen Landkreise durchschnittlich in 2006 hatten!
 - In 2008/2009 gibt es überall einen Einbruch beim BIP pro Kopf, jedoch scheint dieser in den ostdeutschen Bundesländern nicht so stark gewesen zu sein
 
 --
@@ -4850,19 +4829,34 @@ bip_zeitreihe_namen %&gt;%
 
 ---
 
-## Wachstum des BIP
+## Bruttoinlandsprodukt pro Kopf
 
-Paneldaten beim BIP, d.h. wir können:
+Daten ab 1992 vorhanden, d.h. wir können auch weiter zuück gehen:
+- **Allerdings:** Keine Daten zu _allen_ Landkreisen, daher Vorsicht!
+- Hier sehen wir einen Anpassungsprozess in den 1990er Jahren
+- Anpassung verlangsamt sich, ab 2010 praktisch parallel 
 
-- Das Wachstum des BIP
+---
+
+class: center
+
+&lt;img src="VL_case-study-Teil2_files/figure-html/unnamed-chunk-26-1.png" width="50%" /&gt;
+
+---
+
+## Wachstum des BIP pro Kopf
+
+Paneldaten beim BIP pro Kopf vorhanden, d.h. wir können:
+
+- Das **Wachstum** des BIP pro Kopf
 - Für alle Landkreise in Deutschland
 - Seit 2000 bis 2017 
 
-visualisieren.
+berechnen und visualisieren.
 
 --
 
-.question[Gab es einen Anpassungsprozess des BIP pro Kopf?]
+.question[Können wir einen Anpassungsprozess über die Wachstumsraten des BIP pro Kopf feststellen?]
 
 ---
 
@@ -4881,7 +4875,7 @@ count: false
 ```
 ## # A tibble: 9,975 x 8
 ##    Regionalschlues…  Jahr     bip einwohner bip_pro_kopf bundesland_name
-##    &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;fct&gt;          
+##    &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;          
 ##  1 08111             1992 3.20e10    593628       53930. Baden-Württemb…
 ##  2 08115             1992 1.20e10    343190       34900. Baden-Württemb…
 ##  3 08116             1992 1.22e10    487370       25057. Baden-Württemb…
@@ -4892,7 +4886,7 @@ count: false
 ##  8 08125             1992 6.11e 9    283163       21585. Baden-Württemb…
 ##  9 08126             1992 2.29e 9     96072       23797. Baden-Württemb…
 ## 10 08127             1992 3.49e 9    169617       20551. Baden-Württemb…
-## # … with 9,965 more rows, and 2 more variables: landkreis_name &lt;fct&gt;,
+## # … with 9,965 more rows, and 2 more variables: landkreis_name &lt;chr&gt;,
 ## #   ost_name &lt;chr&gt;
 ```
 ]
@@ -4915,7 +4909,7 @@ bip_zeitreihe_namen %&gt;%
 ## # A tibble: 9,975 x 8
 ## # Groups:   Regionalschluessel [399]
 ##    Regionalschlues…  Jahr     bip einwohner bip_pro_kopf bundesland_name
-##    &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;fct&gt;          
+##    &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;          
 ##  1 08111             1992 3.20e10    593628       53930. Baden-Württemb…
 ##  2 08115             1992 1.20e10    343190       34900. Baden-Württemb…
 ##  3 08116             1992 1.22e10    487370       25057. Baden-Württemb…
@@ -4926,7 +4920,7 @@ bip_zeitreihe_namen %&gt;%
 ##  8 08125             1992 6.11e 9    283163       21585. Baden-Württemb…
 ##  9 08126             1992 2.29e 9     96072       23797. Baden-Württemb…
 ## 10 08127             1992 3.49e 9    169617       20551. Baden-Württemb…
-## # … with 9,965 more rows, and 2 more variables: landkreis_name &lt;fct&gt;,
+## # … with 9,965 more rows, and 2 more variables: landkreis_name &lt;chr&gt;,
 ## #   ost_name &lt;chr&gt;
 ```
 ]
@@ -4950,7 +4944,7 @@ bip_zeitreihe_namen %&gt;%
 ## # A tibble: 9,975 x 8
 ## # Groups:   Regionalschluessel [399]
 ##    Regionalschlues…  Jahr    bip einwohner bip_pro_kopf bundesland_name
-##    &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;fct&gt;          
+##    &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;          
 ##  1 01001             1992 2.64e9     86642       30468. Schleswig-Hols…
 ##  2 01001             1994 2.73e9     86287       31622. Schleswig-Hols…
 ##  3 01001             1995 2.74e9     85506       32033. Schleswig-Hols…
@@ -4961,7 +4955,7 @@ bip_zeitreihe_namen %&gt;%
 ##  8 01001             2000 2.62e9     80758       32428. Schleswig-Hols…
 ##  9 01001             2001 2.64e9     80489       32854. Schleswig-Hols…
 ## 10 01001             2002 2.71e9     80414       33734. Schleswig-Hols…
-## # … with 9,965 more rows, and 2 more variables: landkreis_name &lt;fct&gt;,
+## # … with 9,965 more rows, and 2 more variables: landkreis_name &lt;chr&gt;,
 ## #   ost_name &lt;chr&gt;
 ```
 ]
@@ -4976,7 +4970,7 @@ count: false
 bip_zeitreihe_namen %&gt;%
   group_by(Regionalschluessel) %&gt;%
   arrange(Regionalschluessel, Jahr) %&gt;%
-* mutate( bip_wachstum = 100*(bip - lag(bip)) / bip)
+* mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf)
 ```
 ]
  
@@ -4986,7 +4980,7 @@ bip_zeitreihe_namen %&gt;%
 ## # A tibble: 9,975 x 9
 ## # Groups:   Regionalschluessel [399]
 ##    Regionalschlues…  Jahr    bip einwohner bip_pro_kopf bundesland_name
-##    &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;fct&gt;          
+##    &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;          
 ##  1 01001             1992 2.64e9     86642       30468. Schleswig-Hols…
 ##  2 01001             1994 2.73e9     86287       31622. Schleswig-Hols…
 ##  3 01001             1995 2.74e9     85506       32033. Schleswig-Hols…
@@ -4997,8 +4991,8 @@ bip_zeitreihe_namen %&gt;%
 ##  8 01001             2000 2.62e9     80758       32428. Schleswig-Hols…
 ##  9 01001             2001 2.64e9     80489       32854. Schleswig-Hols…
 ## 10 01001             2002 2.71e9     80414       33734. Schleswig-Hols…
-## # … with 9,965 more rows, and 3 more variables: landkreis_name &lt;fct&gt;,
-## #   ost_name &lt;chr&gt;, bip_wachstum &lt;dbl&gt;
+## # … with 9,965 more rows, and 3 more variables: landkreis_name &lt;chr&gt;,
+## #   ost_name &lt;chr&gt;, bip_pro_kopf_wachstum &lt;dbl&gt;
 ```
 ]
 
@@ -5012,7 +5006,7 @@ count: false
 bip_zeitreihe_namen %&gt;%
   group_by(Regionalschluessel) %&gt;%
   arrange(Regionalschluessel, Jahr) %&gt;%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
 * ungroup()
 ```
 ]
@@ -5022,7 +5016,7 @@ bip_zeitreihe_namen %&gt;%
 ```
 ## # A tibble: 9,975 x 9
 ##    Regionalschlues…  Jahr    bip einwohner bip_pro_kopf bundesland_name
-##    &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;fct&gt;          
+##    &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;          
 ##  1 01001             1992 2.64e9     86642       30468. Schleswig-Hols…
 ##  2 01001             1994 2.73e9     86287       31622. Schleswig-Hols…
 ##  3 01001             1995 2.74e9     85506       32033. Schleswig-Hols…
@@ -5033,8 +5027,8 @@ bip_zeitreihe_namen %&gt;%
 ##  8 01001             2000 2.62e9     80758       32428. Schleswig-Hols…
 ##  9 01001             2001 2.64e9     80489       32854. Schleswig-Hols…
 ## 10 01001             2002 2.71e9     80414       33734. Schleswig-Hols…
-## # … with 9,965 more rows, and 3 more variables: landkreis_name &lt;fct&gt;,
-## #   ost_name &lt;chr&gt;, bip_wachstum &lt;dbl&gt;
+## # … with 9,965 more rows, and 3 more variables: landkreis_name &lt;chr&gt;,
+## #   ost_name &lt;chr&gt;, bip_pro_kopf_wachstum &lt;dbl&gt;
 ```
 ]
 
@@ -5048,7 +5042,7 @@ count: false
 bip_zeitreihe_namen %&gt;%
   group_by(Regionalschluessel) %&gt;%
   arrange(Regionalschluessel, Jahr) %&gt;%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
   ungroup() %&gt;%
 * group_by(ost_name, Jahr)
 ```
@@ -5060,7 +5054,7 @@ bip_zeitreihe_namen %&gt;%
 ## # A tibble: 9,975 x 9
 ## # Groups:   ost_name, Jahr [50]
 ##    Regionalschlues…  Jahr    bip einwohner bip_pro_kopf bundesland_name
-##    &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;fct&gt;          
+##    &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;          
 ##  1 01001             1992 2.64e9     86642       30468. Schleswig-Hols…
 ##  2 01001             1994 2.73e9     86287       31622. Schleswig-Hols…
 ##  3 01001             1995 2.74e9     85506       32033. Schleswig-Hols…
@@ -5071,8 +5065,8 @@ bip_zeitreihe_namen %&gt;%
 ##  8 01001             2000 2.62e9     80758       32428. Schleswig-Hols…
 ##  9 01001             2001 2.64e9     80489       32854. Schleswig-Hols…
 ## 10 01001             2002 2.71e9     80414       33734. Schleswig-Hols…
-## # … with 9,965 more rows, and 3 more variables: landkreis_name &lt;fct&gt;,
-## #   ost_name &lt;chr&gt;, bip_wachstum &lt;dbl&gt;
+## # … with 9,965 more rows, and 3 more variables: landkreis_name &lt;chr&gt;,
+## #   ost_name &lt;chr&gt;, bip_pro_kopf_wachstum &lt;dbl&gt;
 ```
 ]
 
@@ -5086,33 +5080,10 @@ count: false
 bip_zeitreihe_namen %&gt;%
   group_by(Regionalschluessel) %&gt;%
   arrange(Regionalschluessel, Jahr) %&gt;%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
   ungroup() %&gt;%
   group_by(ost_name, Jahr) %&gt;%
-* mutate( durchschnitt = mean(bip_wachstum, na.rm=TRUE)) -&gt; bip_wachstum
-```
-]
- 
-.panel2-bip2-auto[
-
-]
-
----
-count: false
- 
-
-.panel1-bip2-auto[
-
-```r
-bip_zeitreihe_namen %&gt;%
-  group_by(Regionalschluessel) %&gt;%
-  arrange(Regionalschluessel, Jahr) %&gt;%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %&gt;%
-  ungroup() %&gt;%
-  group_by(ost_name, Jahr) %&gt;%
-  mutate( durchschnitt = mean(bip_wachstum, na.rm=TRUE)) -&gt; bip_wachstum
-
-*bip_wachstum
+* mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE))
 ```
 ]
  
@@ -5122,7 +5093,7 @@ bip_zeitreihe_namen %&gt;%
 ## # A tibble: 9,975 x 10
 ## # Groups:   ost_name, Jahr [50]
 ##    Regionalschlues…  Jahr    bip einwohner bip_pro_kopf bundesland_name
-##    &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;fct&gt;          
+##    &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;          
 ##  1 01001             1992 2.64e9     86642       30468. Schleswig-Hols…
 ##  2 01001             1994 2.73e9     86287       31622. Schleswig-Hols…
 ##  3 01001             1995 2.74e9     85506       32033. Schleswig-Hols…
@@ -5133,8 +5104,8 @@ bip_zeitreihe_namen %&gt;%
 ##  8 01001             2000 2.62e9     80758       32428. Schleswig-Hols…
 ##  9 01001             2001 2.64e9     80489       32854. Schleswig-Hols…
 ## 10 01001             2002 2.71e9     80414       33734. Schleswig-Hols…
-## # … with 9,965 more rows, and 4 more variables: landkreis_name &lt;fct&gt;,
-## #   ost_name &lt;chr&gt;, bip_wachstum &lt;dbl&gt;, durchschnitt &lt;dbl&gt;
+## # … with 9,965 more rows, and 4 more variables: landkreis_name &lt;chr&gt;,
+## #   ost_name &lt;chr&gt;, bip_pro_kopf_wachstum &lt;dbl&gt;, durchschnitt &lt;dbl&gt;
 ```
 ]
 
@@ -5148,10 +5119,74 @@ count: false
 bip_zeitreihe_namen %&gt;%
   group_by(Regionalschluessel) %&gt;%
   arrange(Regionalschluessel, Jahr) %&gt;%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
   ungroup() %&gt;%
   group_by(ost_name, Jahr) %&gt;%
-  mutate( durchschnitt = mean(bip_wachstum, na.rm=TRUE)) -&gt; bip_wachstum
+  mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE)) %&gt;%
+* ungroup() -&gt; bip_wachstum
+```
+]
+ 
+.panel2-bip2-auto[
+
+]
+
+---
+count: false
+ 
+
+.panel1-bip2-auto[
+
+```r
+bip_zeitreihe_namen %&gt;%
+  group_by(Regionalschluessel) %&gt;%
+  arrange(Regionalschluessel, Jahr) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
+  ungroup() %&gt;%
+  group_by(ost_name, Jahr) %&gt;%
+  mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE)) %&gt;%
+  ungroup() -&gt; bip_wachstum
+
+*bip_wachstum
+```
+]
+ 
+.panel2-bip2-auto[
+
+```
+## # A tibble: 9,975 x 10
+##    Regionalschlues…  Jahr    bip einwohner bip_pro_kopf bundesland_name
+##    &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;          
+##  1 01001             1992 2.64e9     86642       30468. Schleswig-Hols…
+##  2 01001             1994 2.73e9     86287       31622. Schleswig-Hols…
+##  3 01001             1995 2.74e9     85506       32033. Schleswig-Hols…
+##  4 01001             1996 2.69e9     84499       31835. Schleswig-Hols…
+##  5 01001             1997 2.85e9     83344       34208. Schleswig-Hols…
+##  6 01001             1998 3.00e9     82112       36488. Schleswig-Hols…
+##  7 01001             1999 2.83e9     81276       34779. Schleswig-Hols…
+##  8 01001             2000 2.62e9     80758       32428. Schleswig-Hols…
+##  9 01001             2001 2.64e9     80489       32854. Schleswig-Hols…
+## 10 01001             2002 2.71e9     80414       33734. Schleswig-Hols…
+## # … with 9,965 more rows, and 4 more variables: landkreis_name &lt;chr&gt;,
+## #   ost_name &lt;chr&gt;, bip_pro_kopf_wachstum &lt;dbl&gt;, durchschnitt &lt;dbl&gt;
+```
+]
+
+---
+count: false
+ 
+
+.panel1-bip2-auto[
+
+```r
+bip_zeitreihe_namen %&gt;%
+  group_by(Regionalschluessel) %&gt;%
+  arrange(Regionalschluessel, Jahr) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
+  ungroup() %&gt;%
+  group_by(ost_name, Jahr) %&gt;%
+  mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE)) %&gt;%
+  ungroup() -&gt; bip_wachstum
 
 bip_wachstum %&gt;%
 * filter( Jahr &gt;= 2000 )
@@ -5162,9 +5197,8 @@ bip_wachstum %&gt;%
 
 ```
 ## # A tibble: 7,182 x 10
-## # Groups:   ost_name, Jahr [36]
 ##    Regionalschlues…  Jahr    bip einwohner bip_pro_kopf bundesland_name
-##    &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;fct&gt;          
+##    &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt; &lt;chr&gt;          
 ##  1 01001             2000 2.62e9     80758       32428. Schleswig-Hols…
 ##  2 01001             2001 2.64e9     80489       32854. Schleswig-Hols…
 ##  3 01001             2002 2.71e9     80414       33734. Schleswig-Hols…
@@ -5175,8 +5209,8 @@ bip_wachstum %&gt;%
 ##  8 01001             2007 3.18e9     81634       38931. Schleswig-Hols…
 ##  9 01001             2008 3.25e9     82403       39456. Schleswig-Hols…
 ## 10 01001             2009 3.13e9     82478       37920. Schleswig-Hols…
-## # … with 7,172 more rows, and 4 more variables: landkreis_name &lt;fct&gt;,
-## #   ost_name &lt;chr&gt;, bip_wachstum &lt;dbl&gt;, durchschnitt &lt;dbl&gt;
+## # … with 7,172 more rows, and 4 more variables: landkreis_name &lt;chr&gt;,
+## #   ost_name &lt;chr&gt;, bip_pro_kopf_wachstum &lt;dbl&gt;, durchschnitt &lt;dbl&gt;
 ```
 ]
 
@@ -5190,40 +5224,15 @@ count: false
 bip_zeitreihe_namen %&gt;%
   group_by(Regionalschluessel) %&gt;%
   arrange(Regionalschluessel, Jahr) %&gt;%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
   ungroup() %&gt;%
   group_by(ost_name, Jahr) %&gt;%
-  mutate( durchschnitt = mean(bip_wachstum, na.rm=TRUE)) -&gt; bip_wachstum
+  mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE)) %&gt;%
+  ungroup() -&gt; bip_wachstum
 
 bip_wachstum %&gt;%
   filter( Jahr &gt;= 2000 ) %&gt;%
 * ggplot()
-```
-]
- 
-.panel2-bip2-auto[
-![](VL_case-study-Teil2_files/figure-html/bip2_auto_10_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-
-.panel1-bip2-auto[
-
-```r
-bip_zeitreihe_namen %&gt;%
-  group_by(Regionalschluessel) %&gt;%
-  arrange(Regionalschluessel, Jahr) %&gt;%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %&gt;%
-  ungroup() %&gt;%
-  group_by(ost_name, Jahr) %&gt;%
-  mutate( durchschnitt = mean(bip_wachstum, na.rm=TRUE)) -&gt; bip_wachstum
-
-bip_wachstum %&gt;%
-  filter( Jahr &gt;= 2000 ) %&gt;%
-  ggplot() +
-* geom_line(aes(x = Jahr, y = bip_wachstum, group = Regionalschluessel), color = "grey")
 ```
 ]
  
@@ -5241,16 +5250,16 @@ count: false
 bip_zeitreihe_namen %&gt;%
   group_by(Regionalschluessel) %&gt;%
   arrange(Regionalschluessel, Jahr) %&gt;%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
   ungroup() %&gt;%
   group_by(ost_name, Jahr) %&gt;%
-  mutate( durchschnitt = mean(bip_wachstum, na.rm=TRUE)) -&gt; bip_wachstum
+  mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE)) %&gt;%
+  ungroup() -&gt; bip_wachstum
 
 bip_wachstum %&gt;%
   filter( Jahr &gt;= 2000 ) %&gt;%
   ggplot() +
-  geom_line(aes(x = Jahr, y = bip_wachstum, group = Regionalschluessel), color = "grey") +
-* geom_line(aes(x = Jahr, y = durchschnitt, group = Regionalschluessel, color = ost_name))
+* geom_line(aes(x = Jahr, y = bip_pro_kopf_wachstum, group = Regionalschluessel), color = "grey")
 ```
 ]
  
@@ -5268,17 +5277,17 @@ count: false
 bip_zeitreihe_namen %&gt;%
   group_by(Regionalschluessel) %&gt;%
   arrange(Regionalschluessel, Jahr) %&gt;%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
   ungroup() %&gt;%
   group_by(ost_name, Jahr) %&gt;%
-  mutate( durchschnitt = mean(bip_wachstum, na.rm=TRUE)) -&gt; bip_wachstum
+  mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE)) %&gt;%
+  ungroup() -&gt; bip_wachstum
 
 bip_wachstum %&gt;%
   filter( Jahr &gt;= 2000 ) %&gt;%
   ggplot() +
-  geom_line(aes(x = Jahr, y = bip_wachstum, group = Regionalschluessel), color = "grey") +
-  geom_line(aes(x = Jahr, y = durchschnitt, group = Regionalschluessel, color = ost_name)) +
-* scale_color_manual(values = c("#D55E00", "#0072B2"))
+  geom_line(aes(x = Jahr, y = bip_pro_kopf_wachstum, group = Regionalschluessel), color = "grey") +
+* geom_line(aes(x = Jahr, y = durchschnitt, group = Regionalschluessel, color = ost_name))
 ```
 ]
  
@@ -5296,18 +5305,18 @@ count: false
 bip_zeitreihe_namen %&gt;%
   group_by(Regionalschluessel) %&gt;%
   arrange(Regionalschluessel, Jahr) %&gt;%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
   ungroup() %&gt;%
   group_by(ost_name, Jahr) %&gt;%
-  mutate( durchschnitt = mean(bip_wachstum, na.rm=TRUE)) -&gt; bip_wachstum
+  mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE)) %&gt;%
+  ungroup() -&gt; bip_wachstum
 
 bip_wachstum %&gt;%
   filter( Jahr &gt;= 2000 ) %&gt;%
   ggplot() +
-  geom_line(aes(x = Jahr, y = bip_wachstum, group = Regionalschluessel), color = "grey") +
+  geom_line(aes(x = Jahr, y = bip_pro_kopf_wachstum, group = Regionalschluessel), color = "grey") +
   geom_line(aes(x = Jahr, y = durchschnitt, group = Regionalschluessel, color = ost_name)) +
-  scale_color_manual(values = c("#D55E00", "#0072B2")) +
-* theme_minimal()
+* scale_color_manual(values = c("#D55E00", "#0072B2"))
 ```
 ]
  
@@ -5325,23 +5334,19 @@ count: false
 bip_zeitreihe_namen %&gt;%
   group_by(Regionalschluessel) %&gt;%
   arrange(Regionalschluessel, Jahr) %&gt;%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
   ungroup() %&gt;%
   group_by(ost_name, Jahr) %&gt;%
-  mutate( durchschnitt = mean(bip_wachstum, na.rm=TRUE)) -&gt; bip_wachstum
+  mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE)) %&gt;%
+  ungroup() -&gt; bip_wachstum
 
 bip_wachstum %&gt;%
   filter( Jahr &gt;= 2000 ) %&gt;%
   ggplot() +
-  geom_line(aes(x = Jahr, y = bip_wachstum, group = Regionalschluessel), color = "grey") +
+  geom_line(aes(x = Jahr, y = bip_pro_kopf_wachstum, group = Regionalschluessel), color = "grey") +
   geom_line(aes(x = Jahr, y = durchschnitt, group = Regionalschluessel, color = ost_name)) +
   scale_color_manual(values = c("#D55E00", "#0072B2")) +
-  theme_minimal() +
-* labs(color = "Durchschnitt der Landkreise",
-*      title = "Die Wachstumsrate des BIP von ost- und westdeutschen Landkreisen",
-*      caption = "Quelle: Daten der Statistischen Ämter der Länder und des Bundes.",
-*      x = "Jahr",
-*      y = "Veränderung des BIP")
+* theme_minimal()
 ```
 ]
  
@@ -5359,24 +5364,24 @@ count: false
 bip_zeitreihe_namen %&gt;%
   group_by(Regionalschluessel) %&gt;%
   arrange(Regionalschluessel, Jahr) %&gt;%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
   ungroup() %&gt;%
   group_by(ost_name, Jahr) %&gt;%
-  mutate( durchschnitt = mean(bip_wachstum, na.rm=TRUE)) -&gt; bip_wachstum
+  mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE)) %&gt;%
+  ungroup() -&gt; bip_wachstum
 
 bip_wachstum %&gt;%
   filter( Jahr &gt;= 2000 ) %&gt;%
   ggplot() +
-  geom_line(aes(x = Jahr, y = bip_wachstum, group = Regionalschluessel), color = "grey") +
+  geom_line(aes(x = Jahr, y = bip_pro_kopf_wachstum, group = Regionalschluessel), color = "grey") +
   geom_line(aes(x = Jahr, y = durchschnitt, group = Regionalschluessel, color = ost_name)) +
   scale_color_manual(values = c("#D55E00", "#0072B2")) +
   theme_minimal() +
-  labs(color = "Durchschnitt der Landkreise",
-       title = "Die Wachstumsrate des BIP von ost- und westdeutschen Landkreisen",
-       caption = "Quelle: Daten der Statistischen Ämter der Länder und des Bundes.",
-       x = "Jahr",
-       y = "Veränderung des BIP") +
-* theme(legend.position = "none")
+* labs(color = "Durchschnitt der Landkreise",
+*      title = "Die Wachstumsrate des BIP pro Kopf von ost- und westdeutschen\nLandkreisen",
+*      caption = "Quelle: Daten der Statistischen Ämter der Länder und des Bundes.",
+*      x = "Jahr",
+*      y = "Veränderung des BIP pro Kopf")
 ```
 ]
  
@@ -5394,25 +5399,25 @@ count: false
 bip_zeitreihe_namen %&gt;%
   group_by(Regionalschluessel) %&gt;%
   arrange(Regionalschluessel, Jahr) %&gt;%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
   ungroup() %&gt;%
   group_by(ost_name, Jahr) %&gt;%
-  mutate( durchschnitt = mean(bip_wachstum, na.rm=TRUE)) -&gt; bip_wachstum
+  mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE)) %&gt;%
+  ungroup() -&gt; bip_wachstum
 
 bip_wachstum %&gt;%
   filter( Jahr &gt;= 2000 ) %&gt;%
   ggplot() +
-  geom_line(aes(x = Jahr, y = bip_wachstum, group = Regionalschluessel), color = "grey") +
+  geom_line(aes(x = Jahr, y = bip_pro_kopf_wachstum, group = Regionalschluessel), color = "grey") +
   geom_line(aes(x = Jahr, y = durchschnitt, group = Regionalschluessel, color = ost_name)) +
   scale_color_manual(values = c("#D55E00", "#0072B2")) +
   theme_minimal() +
   labs(color = "Durchschnitt der Landkreise",
-       title = "Die Wachstumsrate des BIP von ost- und westdeutschen Landkreisen",
+       title = "Die Wachstumsrate des BIP pro Kopf von ost- und westdeutschen\nLandkreisen",
        caption = "Quelle: Daten der Statistischen Ämter der Länder und des Bundes.",
        x = "Jahr",
-       y = "Veränderung des BIP") +
-  theme(legend.position = "none") +
-* geom_text(aes(x=2000, y=40, label = "-- Durchschnitt für ostdeutsche Landkreise"), color = "#D55E00", hjust=0, size=4, alpha = 0.1)
+       y = "Veränderung des BIP pro Kopf") +
+* theme(legend.position = "none")
 ```
 ]
  
@@ -5430,23 +5435,61 @@ count: false
 bip_zeitreihe_namen %&gt;%
   group_by(Regionalschluessel) %&gt;%
   arrange(Regionalschluessel, Jahr) %&gt;%
-  mutate( bip_wachstum = 100*(bip - lag(bip)) / bip) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
   ungroup() %&gt;%
   group_by(ost_name, Jahr) %&gt;%
-  mutate( durchschnitt = mean(bip_wachstum, na.rm=TRUE)) -&gt; bip_wachstum
+  mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE)) %&gt;%
+  ungroup() -&gt; bip_wachstum
 
 bip_wachstum %&gt;%
   filter( Jahr &gt;= 2000 ) %&gt;%
   ggplot() +
-  geom_line(aes(x = Jahr, y = bip_wachstum, group = Regionalschluessel), color = "grey") +
+  geom_line(aes(x = Jahr, y = bip_pro_kopf_wachstum, group = Regionalschluessel), color = "grey") +
   geom_line(aes(x = Jahr, y = durchschnitt, group = Regionalschluessel, color = ost_name)) +
   scale_color_manual(values = c("#D55E00", "#0072B2")) +
   theme_minimal() +
   labs(color = "Durchschnitt der Landkreise",
-       title = "Die Wachstumsrate des BIP von ost- und westdeutschen Landkreisen",
+       title = "Die Wachstumsrate des BIP pro Kopf von ost- und westdeutschen\nLandkreisen",
        caption = "Quelle: Daten der Statistischen Ämter der Länder und des Bundes.",
        x = "Jahr",
-       y = "Veränderung des BIP") +
+       y = "Veränderung des BIP pro Kopf") +
+  theme(legend.position = "none") +
+* geom_text(aes(x=2000, y=40, label = "-- Durchschnitt für ostdeutsche Landkreise"), color = "#D55E00", hjust=0, size=4, alpha = 0.1)
+```
+]
+ 
+.panel2-bip2-auto[
+![](VL_case-study-Teil2_files/figure-html/bip2_auto_18_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-bip2-auto[
+
+```r
+bip_zeitreihe_namen %&gt;%
+  group_by(Regionalschluessel) %&gt;%
+  arrange(Regionalschluessel, Jahr) %&gt;%
+  mutate( bip_pro_kopf_wachstum = 100*(bip_pro_kopf - lag(bip_pro_kopf)) / bip_pro_kopf) %&gt;%
+  ungroup() %&gt;%
+  group_by(ost_name, Jahr) %&gt;%
+  mutate( durchschnitt = mean(bip_pro_kopf_wachstum, na.rm=TRUE)) %&gt;%
+  ungroup() -&gt; bip_wachstum
+
+bip_wachstum %&gt;%
+  filter( Jahr &gt;= 2000 ) %&gt;%
+  ggplot() +
+  geom_line(aes(x = Jahr, y = bip_pro_kopf_wachstum, group = Regionalschluessel), color = "grey") +
+  geom_line(aes(x = Jahr, y = durchschnitt, group = Regionalschluessel, color = ost_name)) +
+  scale_color_manual(values = c("#D55E00", "#0072B2")) +
+  theme_minimal() +
+  labs(color = "Durchschnitt der Landkreise",
+       title = "Die Wachstumsrate des BIP pro Kopf von ost- und westdeutschen\nLandkreisen",
+       caption = "Quelle: Daten der Statistischen Ämter der Länder und des Bundes.",
+       x = "Jahr",
+       y = "Veränderung des BIP pro Kopf") +
   theme(legend.position = "none") +
   geom_text(aes(x=2000, y=40, label = "-- Durchschnitt für ostdeutsche Landkreise"), color = "#D55E00", hjust=0, size=4, alpha = 0.1) +
 * geom_text(aes(x=2000, y=35, label = "-- Durchschnitt für westdeutsche Landkreise"), color = "#0072B2", hjust=0, size=4, alpha = 0.1)
@@ -5454,7 +5497,7 @@ bip_wachstum %&gt;%
 ]
  
 .panel2-bip2-auto[
-![](VL_case-study-Teil2_files/figure-html/bip2_auto_18_output-1.png)&lt;!-- --&gt;
+![](VL_case-study-Teil2_files/figure-html/bip2_auto_19_output-1.png)&lt;!-- --&gt;
 ]
 
 &lt;style&gt;
@@ -5512,6 +5555,11 @@ bip_wachstum %&gt;%
 
 ## Verteilung des BIP pro Kopf in 2017
 
+
+---
+ 
+## Bruttoinlandsprodukt pro Kopf
+
 Bisherige Grafiken:
 - Punktewolke + Boxplot zeigt die Verteilung
 - Liniendiagramm zeigt die Entwicklung
@@ -5520,7 +5568,7 @@ Bisherige Grafiken:
 
 Alternative Darstellungen der Verteilung:
 - Historgamm (nächste Folie)
-- Kerndichteschätzer (übernächste Folie)
+- Kerndichteschätzer (siehe ausführliche Case-Study)
 
 Alternative Darstellung der Entwicklung:
 - Small multiples (siehe ausführliche Case-Study)
@@ -5543,7 +5591,7 @@ count: false
 ```
 ## # A tibble: 401 x 14
 ##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
+##    &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;          
 ##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
 ##  2 01002                12345 Kiel           01         Schleswig-Hols…
 ##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
@@ -5577,7 +5625,7 @@ gesamtdaten %&gt;%
 ```
 ## # A tibble: 395 x 14
 ##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
+##    &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;          
 ##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
 ##  2 01002                12345 Kiel           01         Schleswig-Hols…
 ##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
@@ -5613,7 +5661,7 @@ gesamtdaten %&gt;%
 ## # A tibble: 395 x 14
 ## # Groups:   ost_name [2]
 ##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
+##    &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;          
 ##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
 ##  2 01002                12345 Kiel           01         Schleswig-Hols…
 ##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
@@ -5851,450 +5899,15 @@ ggplot(gesamtdaten, aes(x = bip_pro_kopf)) +
 
 ---
 
-count: false
- 
+## Verteilung des BIP pro Kopf in 2017
 
-.panel1-bip4-auto[
-
-```r
-*gesamtdaten
-```
-]
- 
-.panel2-bip4-auto[
-
-```
-## # A tibble: 401 x 14
-##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
-##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
-##  2 01002                12345 Kiel           01         Schleswig-Hols…
-##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
-##  4 01004                 3836 Neumünster     01         Schleswig-Hols…
-##  5 01051                 4632 Dithmarschen   01         Schleswig-Hols…
-##  6 01053                 5592 Herzogtum Lau… 01         Schleswig-Hols…
-##  7 01054                 5657 Nordfriesland  01         Schleswig-Hols…
-##  8 01055                 5748 Ostholstein    01         Schleswig-Hols…
-##  9 01056                 8599 Pinneberg      01         Schleswig-Hols…
-## 10 01057                 3264 Plön           01         Schleswig-Hols…
-## # … with 391 more rows, and 9 more variables: Schulden_pro_kopf_lk &lt;dbl&gt;,
-## #   Einwohner &lt;dbl&gt;, Schulden_gesamt &lt;dbl&gt;, bip &lt;dbl&gt;, bip_pro_kopf &lt;dbl&gt;,
-## #   erw &lt;dbl&gt;, alo_quote &lt;dbl&gt;, ost &lt;fct&gt;, ost_name &lt;chr&gt;
-```
-]
-
----
-count: false
- 
-
-.panel1-bip4-auto[
-
-```r
-gesamtdaten %&gt;%
-* filter(bip_pro_kopf&lt;100000)
-```
-]
- 
-.panel2-bip4-auto[
-
-```
-## # A tibble: 395 x 14
-##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
-##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
-##  2 01002                12345 Kiel           01         Schleswig-Hols…
-##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
-##  4 01004                 3836 Neumünster     01         Schleswig-Hols…
-##  5 01051                 4632 Dithmarschen   01         Schleswig-Hols…
-##  6 01053                 5592 Herzogtum Lau… 01         Schleswig-Hols…
-##  7 01054                 5657 Nordfriesland  01         Schleswig-Hols…
-##  8 01055                 5748 Ostholstein    01         Schleswig-Hols…
-##  9 01056                 8599 Pinneberg      01         Schleswig-Hols…
-## 10 01057                 3264 Plön           01         Schleswig-Hols…
-## # … with 385 more rows, and 9 more variables: Schulden_pro_kopf_lk &lt;dbl&gt;,
-## #   Einwohner &lt;dbl&gt;, Schulden_gesamt &lt;dbl&gt;, bip &lt;dbl&gt;, bip_pro_kopf &lt;dbl&gt;,
-## #   erw &lt;dbl&gt;, alo_quote &lt;dbl&gt;, ost &lt;fct&gt;, ost_name &lt;chr&gt;
-```
-]
-
----
-count: false
- 
-
-.panel1-bip4-auto[
-
-```r
-gesamtdaten %&gt;%
-  filter(bip_pro_kopf&lt;100000) %&gt;%
-* group_by(ost_name)
-```
-]
- 
-.panel2-bip4-auto[
-
-```
-## # A tibble: 395 x 14
-## # Groups:   ost_name [2]
-##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
-##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
-##  2 01002                12345 Kiel           01         Schleswig-Hols…
-##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
-##  4 01004                 3836 Neumünster     01         Schleswig-Hols…
-##  5 01051                 4632 Dithmarschen   01         Schleswig-Hols…
-##  6 01053                 5592 Herzogtum Lau… 01         Schleswig-Hols…
-##  7 01054                 5657 Nordfriesland  01         Schleswig-Hols…
-##  8 01055                 5748 Ostholstein    01         Schleswig-Hols…
-##  9 01056                 8599 Pinneberg      01         Schleswig-Hols…
-## 10 01057                 3264 Plön           01         Schleswig-Hols…
-## # … with 385 more rows, and 9 more variables: Schulden_pro_kopf_lk &lt;dbl&gt;,
-## #   Einwohner &lt;dbl&gt;, Schulden_gesamt &lt;dbl&gt;, bip &lt;dbl&gt;, bip_pro_kopf &lt;dbl&gt;,
-## #   erw &lt;dbl&gt;, alo_quote &lt;dbl&gt;, ost &lt;fct&gt;, ost_name &lt;chr&gt;
-```
-]
-
----
-count: false
- 
-
-.panel1-bip4-auto[
-
-```r
-gesamtdaten %&gt;%
-  filter(bip_pro_kopf&lt;100000) %&gt;%
-  group_by(ost_name) %&gt;%
-* summarise(durchschnitt = mean(bip_pro_kopf), median = median(bip_pro_kopf))
-```
-]
- 
-.panel2-bip4-auto[
-
-```
-## # A tibble: 2 x 3
-##   ost_name        durchschnitt median
-##   &lt;chr&gt;                  &lt;dbl&gt;  &lt;dbl&gt;
-## 1 Ostdeutschland        28338. 26775.
-## 2 Westdeutschland       38021. 34579.
-```
-]
-
----
-count: false
- 
-
-.panel1-bip4-auto[
-
-```r
-gesamtdaten %&gt;%
-  filter(bip_pro_kopf&lt;100000) %&gt;%
-  group_by(ost_name) %&gt;%
-  summarise(durchschnitt = mean(bip_pro_kopf), median = median(bip_pro_kopf)) %&gt;%
-* ungroup() -&gt; mittel2
-```
-]
- 
-.panel2-bip4-auto[
-
-]
-
----
-count: false
- 
-
-.panel1-bip4-auto[
-
-```r
-gesamtdaten %&gt;%
-  filter(bip_pro_kopf&lt;100000) %&gt;%
-  group_by(ost_name) %&gt;%
-  summarise(durchschnitt = mean(bip_pro_kopf), median = median(bip_pro_kopf)) %&gt;%
-  ungroup() -&gt; mittel2
-
-*gesamtdaten
-```
-]
- 
-.panel2-bip4-auto[
-
-```
-## # A tibble: 401 x 14
-##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
-##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
-##  2 01002                12345 Kiel           01         Schleswig-Hols…
-##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
-##  4 01004                 3836 Neumünster     01         Schleswig-Hols…
-##  5 01051                 4632 Dithmarschen   01         Schleswig-Hols…
-##  6 01053                 5592 Herzogtum Lau… 01         Schleswig-Hols…
-##  7 01054                 5657 Nordfriesland  01         Schleswig-Hols…
-##  8 01055                 5748 Ostholstein    01         Schleswig-Hols…
-##  9 01056                 8599 Pinneberg      01         Schleswig-Hols…
-## 10 01057                 3264 Plön           01         Schleswig-Hols…
-## # … with 391 more rows, and 9 more variables: Schulden_pro_kopf_lk &lt;dbl&gt;,
-## #   Einwohner &lt;dbl&gt;, Schulden_gesamt &lt;dbl&gt;, bip &lt;dbl&gt;, bip_pro_kopf &lt;dbl&gt;,
-## #   erw &lt;dbl&gt;, alo_quote &lt;dbl&gt;, ost &lt;fct&gt;, ost_name &lt;chr&gt;
-```
-]
-
----
-count: false
- 
-
-.panel1-bip4-auto[
-
-```r
-gesamtdaten %&gt;%
-  filter(bip_pro_kopf&lt;100000) %&gt;%
-  group_by(ost_name) %&gt;%
-  summarise(durchschnitt = mean(bip_pro_kopf), median = median(bip_pro_kopf)) %&gt;%
-  ungroup() -&gt; mittel2
-
-gesamtdaten %&gt;%
-* ggplot(aes(x = bip_pro_kopf))
-```
-]
- 
-.panel2-bip4-auto[
-![](VL_case-study-Teil2_files/figure-html/bip4_auto_07_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-
-.panel1-bip4-auto[
-
-```r
-gesamtdaten %&gt;%
-  filter(bip_pro_kopf&lt;100000) %&gt;%
-  group_by(ost_name) %&gt;%
-  summarise(durchschnitt = mean(bip_pro_kopf), median = median(bip_pro_kopf)) %&gt;%
-  ungroup() -&gt; mittel2
-
-gesamtdaten %&gt;%
-  ggplot(aes(x = bip_pro_kopf)) +
-* geom_density(data = filter(gesamtdaten, bip_pro_kopf&lt;100000), kernel = "gaussian", bw = 1000)
-```
-]
- 
-.panel2-bip4-auto[
-![](VL_case-study-Teil2_files/figure-html/bip4_auto_08_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-
-.panel1-bip4-auto[
-
-```r
-gesamtdaten %&gt;%
-  filter(bip_pro_kopf&lt;100000) %&gt;%
-  group_by(ost_name) %&gt;%
-  summarise(durchschnitt = mean(bip_pro_kopf), median = median(bip_pro_kopf)) %&gt;%
-  ungroup() -&gt; mittel2
-
-gesamtdaten %&gt;%
-  ggplot(aes(x = bip_pro_kopf)) +
-  geom_density(data = filter(gesamtdaten, bip_pro_kopf&lt;100000), kernel = "gaussian", bw = 1000) +
-* facet_grid(ost_name~.)
-```
-]
- 
-.panel2-bip4-auto[
-![](VL_case-study-Teil2_files/figure-html/bip4_auto_09_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-
-.panel1-bip4-auto[
-
-```r
-gesamtdaten %&gt;%
-  filter(bip_pro_kopf&lt;100000) %&gt;%
-  group_by(ost_name) %&gt;%
-  summarise(durchschnitt = mean(bip_pro_kopf), median = median(bip_pro_kopf)) %&gt;%
-  ungroup() -&gt; mittel2
-
-gesamtdaten %&gt;%
-  ggplot(aes(x = bip_pro_kopf)) +
-  geom_density(data = filter(gesamtdaten, bip_pro_kopf&lt;100000), kernel = "gaussian", bw = 1000) +
-  facet_grid(ost_name~.) +
-* geom_vline(data = mittel2, aes(xintercept = durchschnitt), color = "blue")
-```
-]
- 
-.panel2-bip4-auto[
-![](VL_case-study-Teil2_files/figure-html/bip4_auto_10_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-
-.panel1-bip4-auto[
-
-```r
-gesamtdaten %&gt;%
-  filter(bip_pro_kopf&lt;100000) %&gt;%
-  group_by(ost_name) %&gt;%
-  summarise(durchschnitt = mean(bip_pro_kopf), median = median(bip_pro_kopf)) %&gt;%
-  ungroup() -&gt; mittel2
-
-gesamtdaten %&gt;%
-  ggplot(aes(x = bip_pro_kopf)) +
-  geom_density(data = filter(gesamtdaten, bip_pro_kopf&lt;100000), kernel = "gaussian", bw = 1000) +
-  facet_grid(ost_name~.) +
-  geom_vline(data = mittel2, aes(xintercept = durchschnitt), color = "blue") +
-* geom_vline(data = mittel2, aes(xintercept = median), color = "darkgreen")
-```
-]
- 
-.panel2-bip4-auto[
-![](VL_case-study-Teil2_files/figure-html/bip4_auto_11_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-
-.panel1-bip4-auto[
-
-```r
-gesamtdaten %&gt;%
-  filter(bip_pro_kopf&lt;100000) %&gt;%
-  group_by(ost_name) %&gt;%
-  summarise(durchschnitt = mean(bip_pro_kopf), median = median(bip_pro_kopf)) %&gt;%
-  ungroup() -&gt; mittel2
-
-gesamtdaten %&gt;%
-  ggplot(aes(x = bip_pro_kopf)) +
-  geom_density(data = filter(gesamtdaten, bip_pro_kopf&lt;100000), kernel = "gaussian", bw = 1000) +
-  facet_grid(ost_name~.) +
-  geom_vline(data = mittel2, aes(xintercept = durchschnitt), color = "blue") +
-  geom_vline(data = mittel2, aes(xintercept = median), color = "darkgreen") +
-* theme_bw()
-```
-]
- 
-.panel2-bip4-auto[
-![](VL_case-study-Teil2_files/figure-html/bip4_auto_12_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-
-.panel1-bip4-auto[
-
-```r
-gesamtdaten %&gt;%
-  filter(bip_pro_kopf&lt;100000) %&gt;%
-  group_by(ost_name) %&gt;%
-  summarise(durchschnitt = mean(bip_pro_kopf), median = median(bip_pro_kopf)) %&gt;%
-  ungroup() -&gt; mittel2
-
-gesamtdaten %&gt;%
-  ggplot(aes(x = bip_pro_kopf)) +
-  geom_density(data = filter(gesamtdaten, bip_pro_kopf&lt;100000), kernel = "gaussian", bw = 1000) +
-  facet_grid(ost_name~.) +
-  geom_vline(data = mittel2, aes(xintercept = durchschnitt), color = "blue") +
-  geom_vline(data = mittel2, aes(xintercept = median), color = "darkgreen") +
-  theme_bw() +
-* labs(title = "Verteilung des BIP pro Kopf für Ost- und Westdeutschland",
-*      subtitle = "Beobachtungen auf Landkreisebene in 2017, Durchschnitt = blau,\nMedian = grün",
-*      x = "BIP pro Kopf",
-*      y = "Dichte")
-```
-]
- 
-.panel2-bip4-auto[
-![](VL_case-study-Teil2_files/figure-html/bip4_auto_13_output-1.png)&lt;!-- --&gt;
-]
-
----
-count: false
- 
-
-.panel1-bip4-auto[
-
-```r
-gesamtdaten %&gt;%
-  filter(bip_pro_kopf&lt;100000) %&gt;%
-  group_by(ost_name) %&gt;%
-  summarise(durchschnitt = mean(bip_pro_kopf), median = median(bip_pro_kopf)) %&gt;%
-  ungroup() -&gt; mittel2
-
-gesamtdaten %&gt;%
-  ggplot(aes(x = bip_pro_kopf)) +
-  geom_density(data = filter(gesamtdaten, bip_pro_kopf&lt;100000), kernel = "gaussian", bw = 1000) +
-  facet_grid(ost_name~.) +
-  geom_vline(data = mittel2, aes(xintercept = durchschnitt), color = "blue") +
-  geom_vline(data = mittel2, aes(xintercept = median), color = "darkgreen") +
-  theme_bw() +
-  labs(title = "Verteilung des BIP pro Kopf für Ost- und Westdeutschland",
-       subtitle = "Beobachtungen auf Landkreisebene in 2017, Durchschnitt = blau,\nMedian = grün",
-       x = "BIP pro Kopf",
-       y = "Dichte")
-```
-]
- 
-.panel2-bip4-auto[
-![](VL_case-study-Teil2_files/figure-html/bip4_auto_14_output-1.png)&lt;!-- --&gt;
-]
-
-&lt;style&gt;
-.panel1-bip4-auto {
-  color: black;
-  width: 38.6060606060606%;
-  hight: 32%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-.panel2-bip4-auto {
-  color: black;
-  width: 59.3939393939394%;
-  hight: 32%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-.panel3-bip4-auto {
-  color: black;
-  width: NA%;
-  hight: 33%;
-  float: left;
-  padding-left: 1%;
-  font-size: 80%
-}
-&lt;/style&gt;
-
-
-
-
+&lt;img src="VL_case-study-Teil2_files/figure-html/unnamed-chunk-27-1.png" width="40%" /&gt;
 
 ---
 
 ## Verteilung des BIP pro Kopf in 2017
 
-.pull-left[
-&lt;img src="VL_case-study-Teil2_files/figure-html/unnamed-chunk-26-1.png" width="70%" /&gt;
-
-]
-
-.pull-right[
-&lt;img src="VL_case-study-Teil2_files/figure-html/unnamed-chunk-27-1.png" width="70%" /&gt;
-
-]
-
----
-
-## Verteilung des BIP pro Kopf in 2017
-
-Kendichteschätzer und Histogramm bestätigen das Bild des Boxplots:
+Das Histogramm bestätigen das Bild des Boxplots:
 - Deutliche Unterschiede zwischen ost- und westdeutschend Landkreisen in 2017
 - Deutlich mehr Ausreißer nach oben bei westdeutschen Landkreisen
 - Verteilung ist für ostdeutsche Landkreise enger um den Mittelwert für das BIP pro Kopf von 28338€
@@ -6681,16 +6294,16 @@ mit `\(\mu_x, \mu_y\)` als Mittelwerte von `\(x_1,\dots, x_n\)` und `\(y_1, \dot
 
 --
 
-.question[Wie hängt die Arbeitslosenquote in den einzelnen Landkreisen mit deren BIP-Wachstum zusammen?]
+.question[Wie hängt die Arbeitslosenquote in den einzelnen Landkreisen mit deren BIP-pro-Kopf-Wachstum zusammen?]
 
 ---
 
-## Korrelation zwischen Arbeitslosenquote und BIP-Wachstum
+## Korrelation zwischen Arbeitslosenquote und BIP-pro-Kopf-Wachstum
 
 Wir können uns die oben beschriebene Formel bzgl. des Zusammenhangs von zwei Variablen immer auch grafisch verdeutlichen
 
 - Wir haben zwei Dimensionen
-  - Variable x: BIP-Wachstum
+  - Variable x: BIP-pro-Kopf-Wachstum
   - Variable y: Arbeitslosenquote
 
 Im Streudiagramm können wir Variable x auf der x-Achse und Variable y auf der y-Achse abtragen
@@ -6712,9 +6325,9 @@ count: false
 .panel2-cor1-auto[
 
 ```
-## # A tibble: 401 x 18
+## # A tibble: 401 x 17
 ##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
+##    &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;          
 ##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
 ##  2 01002                12345 Kiel           01         Schleswig-Hols…
 ##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
@@ -6725,10 +6338,10 @@ count: false
 ##  8 01055                 5748 Ostholstein    01         Schleswig-Hols…
 ##  9 01056                 8599 Pinneberg      01         Schleswig-Hols…
 ## 10 01057                 3264 Plön           01         Schleswig-Hols…
-## # … with 391 more rows, and 13 more variables: Schulden_pro_kopf_lk &lt;dbl&gt;,
+## # … with 391 more rows, and 12 more variables: Schulden_pro_kopf_lk &lt;dbl&gt;,
 ## #   Einwohner &lt;dbl&gt;, Schulden_gesamt &lt;dbl&gt;, bip &lt;dbl&gt;, bip_pro_kopf &lt;dbl&gt;,
-## #   erw &lt;dbl&gt;, alo_quote &lt;dbl&gt;, ost &lt;fct&gt;, ost_name.x &lt;chr&gt;, ost_name.y &lt;chr&gt;,
-## #   bip_wachstum &lt;dbl&gt;, Jahr &lt;dbl&gt;, anteil_schulden &lt;dbl&gt;
+## #   erw &lt;dbl&gt;, alo_quote &lt;dbl&gt;, ost &lt;fct&gt;, ost_name &lt;chr&gt;,
+## #   bip_pro_kopf_wachstum &lt;dbl&gt;, Jahr &lt;dbl&gt;, anteil_schulden &lt;dbl&gt;
 ```
 ]
 
@@ -6740,7 +6353,7 @@ count: false
 
 ```r
 gesamtdaten %&gt;%
-* ggplot(aes(x = bip_wachstum, y = alo_quote))
+* ggplot(aes(x = bip_pro_kopf_wachstum, y = alo_quote))
 ```
 ]
  
@@ -6756,7 +6369,7 @@ count: false
 
 ```r
 gesamtdaten %&gt;%
-  ggplot(aes(x = bip_wachstum, y = alo_quote)) +
+  ggplot(aes(x = bip_pro_kopf_wachstum, y = alo_quote)) +
 * geom_point()
 ```
 ]
@@ -6773,7 +6386,7 @@ count: false
 
 ```r
 gesamtdaten %&gt;%
-  ggplot(aes(x = bip_wachstum, y = alo_quote)) +
+  ggplot(aes(x = bip_pro_kopf_wachstum, y = alo_quote)) +
   geom_point() +
 * labs( x = "Wachstum des BIP %",
 *       y = "Arbeitslosenquote in %",
@@ -6793,7 +6406,7 @@ count: false
 
 ```r
 gesamtdaten %&gt;%
-  ggplot(aes(x = bip_wachstum, y = alo_quote)) +
+  ggplot(aes(x = bip_pro_kopf_wachstum, y = alo_quote)) +
   geom_point() +
   labs( x = "Wachstum des BIP %",
         y = "Arbeitslosenquote in %",
@@ -6851,12 +6464,12 @@ Korrelationskoeffizient:
 
 ```r
 cor(gesamtdaten$alo_quote, 
-    gesamtdaten$bip_wachstum,
+    gesamtdaten$bip_pro_kopf_wachstum,
     use = "pairwise.complete.obs")
 ```
 
 ```
-## [1] -0.1521478
+## [1] -0.03481521
 ```
 
 --
@@ -6895,9 +6508,9 @@ cor_alo_verschuldung &lt;- cor(gesamtdaten$alo_quote, gesamtdaten$anteil_schulde
 .panel2-cor2-auto[
 
 ```
-## # A tibble: 401 x 18
+## # A tibble: 401 x 17
 ##    Regionalschlues… total_alo landkreis_name bundesland bundesland_name
-##    &lt;chr&gt;                &lt;dbl&gt; &lt;fct&gt;          &lt;chr&gt;      &lt;fct&gt;          
+##    &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;chr&gt;          
 ##  1 01001                 4512 Flensburg      01         Schleswig-Hols…
 ##  2 01002                12345 Kiel           01         Schleswig-Hols…
 ##  3 01003                 9692 Lübeck         01         Schleswig-Hols…
@@ -6908,10 +6521,10 @@ cor_alo_verschuldung &lt;- cor(gesamtdaten$alo_quote, gesamtdaten$anteil_schulde
 ##  8 01055                 5748 Ostholstein    01         Schleswig-Hols…
 ##  9 01056                 8599 Pinneberg      01         Schleswig-Hols…
 ## 10 01057                 3264 Plön           01         Schleswig-Hols…
-## # … with 391 more rows, and 13 more variables: Schulden_pro_kopf_lk &lt;dbl&gt;,
+## # … with 391 more rows, and 12 more variables: Schulden_pro_kopf_lk &lt;dbl&gt;,
 ## #   Einwohner &lt;dbl&gt;, Schulden_gesamt &lt;dbl&gt;, bip &lt;dbl&gt;, bip_pro_kopf &lt;dbl&gt;,
-## #   erw &lt;dbl&gt;, alo_quote &lt;dbl&gt;, ost &lt;fct&gt;, ost_name.x &lt;chr&gt;, ost_name.y &lt;chr&gt;,
-## #   bip_wachstum &lt;dbl&gt;, Jahr &lt;dbl&gt;, anteil_schulden &lt;dbl&gt;
+## #   erw &lt;dbl&gt;, alo_quote &lt;dbl&gt;, ost &lt;fct&gt;, ost_name &lt;chr&gt;,
+## #   bip_pro_kopf_wachstum &lt;dbl&gt;, Jahr &lt;dbl&gt;, anteil_schulden &lt;dbl&gt;
 ```
 ]
 

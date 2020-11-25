@@ -4,6 +4,7 @@ output:
   html_document:
     theme: cosmo
     code_download: true
+    code_folding: hide
     toc: true
     toc_float: true
 ---

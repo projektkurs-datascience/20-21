@@ -114,6 +114,12 @@ knitr::include_url("slides/Visualisierung-Guidelines.html")
 
 - Wie auch das Buch [Introduction to Data Science](https://rafalab.github.io/dsbook/) (Kapitel 10)
 
+### 11: Korrelation
+
+```{r}
+knitr::include_url("slides/correlation.html")
+```
+
 
 ## Vorlesungsfolien der Live-Veranstaltungen {.tabset}
 
