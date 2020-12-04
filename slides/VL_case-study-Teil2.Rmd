@@ -1080,11 +1080,6 @@ bip_wachstum %>%
 .alert[Es ist kein Anpassungsprozess ersichtlich, dafür sind die Wachstumsraten zu ähnlich.]
 
 ---
-
-## Verteilung des BIP pro Kopf in 2017
-
-
----
  
 ## Bruttoinlandsprodukt pro Kopf
 
