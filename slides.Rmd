@@ -20,7 +20,7 @@ Die folgenden Bücher sind **kostenfrei**, können **online** gelesen werden und
 
 <br></br>
 
-### 02: RMarkdown
+### 01: RMarkdown
 
 ```{r}
 knitr::include_url("slides/rmarkdown.html")
@@ -41,55 +41,69 @@ knitr::include_url("slides/rmarkdown.html")
 knitr::include_url("slides/data-types.html")
 ```
 
-- R for Data Science, Data Visualization Chapter: http://r4ds.had.co.nz/data-visualisation.html
 
-- Modern Dive, Data Visualization Chapter: http://moderndive.com/3-viz.html
+### 03: Warum Git und Github?
 
-- RStudio `ggplot2` Cheatsheet: https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf
+```{r}
+knitr::include_url("slides/Vorteile_Git-und-Github.html")
+```
 
-### 03: Programming Basics
+- Happy Git with R: http://happygitwithr.com/
+
+- Try Git tutorial: https://try.github.io/levels/1/challenges/1
+
+- Introduction to Data Science: https://rafalab.github.io/dsbook/git.html (Kapitel 39)
+
+### 04: Programming Basics
 
 ```{r}
 knitr::include_url("slides/programming-basics.html")
 ```
 
-### 04: Vektorarithmetik
+- Introduction to Data Science: https://rafalab.github.io/dsbook/programming-basics.html
+
+### 05: Vektorarithmetik
 
 ```{r}
 knitr::include_url("slides/vector-arithmetics.html")
 ```
 
-### 05: Daten in R importieren
+### 06: Daten in R importieren
 
 ```{r}
 knitr::include_url("slides/import-data.html")
 ```
 
-### 06: Daten in die richtige Form bringen
+### 07: Daten in die richtige Form bringen
 
 ```{r}
 knitr::include_url("slides/reshape-data.html")
 ```
 
-### 07: Einführung in die Datenaufbereitung
+- Blog Post wie Sie ihre Daten aufarbeiten können: https://rladiessydney.org/courses/ryouwithme/02-cleanitup-5/
+
+### 08: Einführung in die Datenaufbereitung
 
 ```{r}
 knitr::include_url("slides/data-wrangling-intro.html")
 ```
 
-### 08: Datensätze zusammenführen
+
+### 09: Datensätze zusammenführen
 
 ```{r}
 knitr::include_url("slides/combine-tables.html")
 ```
 
-### 09: Datum und Uhrzeit in R
+- Introduction to Data Science: https://rafalab.github.io/dsbook/joining-tables.html
+
+### 10: Datum und Uhrzeit in R
 
 ```{r}
 knitr::include_url("slides/dates-and-time.html")
 ```
 
-### 10: Visualisierung mit ggplot2
+### 11: Visualisierung mit ggplot2
 
 ```{r}
 knitr::include_url("slides/Visualisierung_mit_ggplot2.html")
@@ -102,19 +116,18 @@ knitr::include_url("slides/Visualisierung_mit_ggplot2.html")
 
 - Das RStudio `ggplot2` Cheatsheet finden Sie hier: https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf
 
-### 11: Visualisierungsguidelines
+### 12: Visualisierungsguidelines
 
 ```{r}
 knitr::include_url("slides/Visualisierung-Guidelines.html")
 ```
 
 - Diese Vorlesungseinheit orientiert sich an einem Vortrag von [Karl Broman](http://kbroman.org/) mit dem Titel: ["Creating effective figures and tables"](https://www.biostat.wisc.edu/~kbroman/presentations/graphs2017.pdf), 
-
 - Weiterhin sind die Vorlesungsfolien von Peter Aldhous eingearbeitet worden: [Introduction to Data Visualization course](http://paldhous.github.io/ucb/2016/dataviz/index.html) 
 
 - Wie auch das Buch [Introduction to Data Science](https://rafalab.github.io/dsbook/) (Kapitel 10)
 
-### 11: Korrelation
+### 13: Korrelation
 
 ```{r}
 knitr::include_url("slides/correlation.html")

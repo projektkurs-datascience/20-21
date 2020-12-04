@@ -31,6 +31,8 @@ navbar:
         href: ./tutorials/Pakete-Installieren.html
       - text: "Hilfreiche Fragen im Forum stellen"
         href: ./tutorials/Fragen-im-Forum.html
+      - text: "Tutorial zu Git und Github"
+        href: ./tutorials/Git-und-Github.html
       - text: "Leitlinien zur Projektausarbeitung"
         href: ./tutorials/Leitlinien_zur_Projektabgabe.html
       - text: "Review Reports erstellen"
