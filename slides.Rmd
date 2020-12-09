@@ -136,7 +136,7 @@ knitr::include_url("slides/correlation.html")
 ### 14: Advanced R Markdown
 
 ```{r}
-knitr::include_url("slides/Advance_RMarkdown.html")
+knitr::include_url("slides/Advanced_RMarkdown.html")
 ```
 
 Hervorragende Einführungen und Übersichten zu R Markdown bietet Allison Hill an.
