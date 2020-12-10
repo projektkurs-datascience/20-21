@@ -20,6 +20,7 @@ The topics include the following:
 
 - Problem Set 1: Basic introduction to R and a short introduction to ggplot as well as a small introduction to data frames. [Here is the link to the RStudio Cloud to test this problem set](https://rstudio.cloud/project/1857656)
 - Problem Set 2: Basic introduction how to get data into R, join different datasets and manipulate datasets. Here we introduce the basic dyplr syntax. [Here is the link to the RStudio Cloud to test this problem set](https://rstudio.cloud/project/1067683)
+- Problem Set 3: Introduction to ggplot and how to make plots effective and visually appealing. Animated graphs as well as maps are also included in this section. [Here is the link to the RStudio Cloud to test this problem set](https://rstudio.cloud/project/1067712)
 
 If you like to give these problem sets a try just klick on the above link for every problem set and it will open up an RStudio Cloud project with the respective problem set.
 
@@ -34,7 +35,7 @@ For more Problem Sets and a thourough description of RTutor visit: https://githu
 
 # License
 
-- Except for the RTutor problem sets, you can use all materials under a [Creative Commmons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://ocw.mit.edu/terms/#cc) license license.
+- Except for the RTutor problem sets, you can use all materials under a [Creative Commmons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://ocw.mit.edu/terms/#cc) license.
 
 - You can also use and share the RTutor problem sets similar to the (CC BY-NC-SA 4.0) license with one restriction: You are not allowed to use or share the problem sets if you make or plan to make publicly available or provide a link to any solutions of these problem sets. (To motivate students to solve the problem sets, they are grade-relevant to a small extend. Therefore I don't want solutions too easily available.)
 
