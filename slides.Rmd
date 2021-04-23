@@ -168,9 +168,20 @@ knitr::include_url("slides/intro_projektkurs_data-science.html")
 knitr::include_url("slides/VL_case-study-Teil1.html")
 ```
 
-### 02: Zweiter Teil der Case-Study 
+### 03: Zweiter Teil der Case-Study 
 
 ```{r}
 knitr::include_url("slides/VL_case-study-Teil2.html")
 ```
 
+### 04: Einführung und Begrüßung zum 2. Teil der VL
+
+```{r}
+knitr::include_url("slides/intro_projektkurs_data-science2.html")
+```
+
+### 05: Wahrscheinlichkeiten, Verteilungen und Konfidenzintervalle
+
+```{r}
+knitr::include_url("slides/probability-and-confidence-interval.html")
+```

@@ -41,8 +41,10 @@ navbar:
         href: ./tutorials/Gruppenfeedback.html
       - text: "Cheatsheets"
         href: https://rstudio.com/resources/cheatsheets/
-  - text: Moodle
+  - text: Moodle 1. Semester
     href: https://moodle.uni-ulm.de/course/view.php?id=15914
+  - text: Moodle 2. Semester
+    href: https://moodle.uni-ulm.de/course/view.php?id=21540
   right:
   - icon: fa-github fa-lg
     href: https://github.com/projektkurs-datascience/20-21
