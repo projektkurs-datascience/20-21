@@ -5,7 +5,7 @@ output: html_document
 
 Hier finden Sie Folien als PDFs zum Download:
 
-# Lehrvideos
+# Lehrvideos und Vorlesungen
 
 - [Einführung zu RMarkdown](slides/rmarkdown.pdf)
 - [Datentypen in R](slides/data-types.pdf)
@@ -22,6 +22,8 @@ Hier finden Sie Folien als PDFs zum Download:
 - [Korrelation](slides/correlation.pdf)
 - [Advanced R Markdown](slides/advanced_rmarkdown.pdf)
 - [Stichprobe vs. Grundgesamtheit](slides/sample-vs-population.pdf)
+- [Stichprobenvarianz und Standardfehler](slides/stichprobenvarianz-und-standardfehler.pdf)
+- [Konfidenzintervalle](slides/konfidenzintervalle.pdf)
 
 # Vorlesungsvideos
 
