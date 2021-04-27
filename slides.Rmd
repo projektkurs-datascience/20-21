@@ -185,3 +185,9 @@ knitr::include_url("slides/intro_projektkurs_data-science2.html")
 ```{r}
 knitr::include_url("slides/probability-and-confidence-interval.html")
 ```
+
+### 06: Inferenzstatistik (Hypothestest)
+
+```{r}
+knitr::include_url("slides/inference.html")
+```

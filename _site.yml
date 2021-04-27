@@ -22,6 +22,8 @@ navbar:
         href: https://github.com/projektkurs-datascience/20-21/tree/main/problem-sets/ps2
       - text: "Problem Set 3"
         href: https://github.com/projektkurs-datascience/20-21/tree/main/problem-sets/ps3
+      - text: "Problem Set 4"
+        href: https://github.com/projektkurs-datascience/20-21/tree/main/problem-sets/ps4
   - text: Tutorials
     icon: fa-users
     menu:
@@ -41,9 +43,9 @@ navbar:
         href: ./tutorials/Gruppenfeedback.html
       - text: "Cheatsheets"
         href: https://rstudio.com/resources/cheatsheets/
-  - text: Moodle 1. Semester
+  - text: Moodle WiSe
     href: https://moodle.uni-ulm.de/course/view.php?id=15914
-  - text: Moodle 2. Semester
+  - text: Moodle SoSe
     href: https://moodle.uni-ulm.de/course/view.php?id=21540
   right:
   - icon: fa-github fa-lg
