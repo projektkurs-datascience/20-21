@@ -191,3 +191,9 @@ knitr::include_url("slides/probability-and-confidence-interval.html")
 ```{r}
 knitr::include_url("slides/inference.html")
 ```
+
+### 07: Lineare Regression (inkl. Interaktionsterme)
+
+```{r}
+knitr::include_url("slides/linear-regression.html")
+```

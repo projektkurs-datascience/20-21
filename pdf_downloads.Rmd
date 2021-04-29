@@ -31,3 +31,4 @@ Hier finden Sie Folien als PDFs zum Download:
 - [Einführungsveranstaltung zum 2. Teil](slides/intro_projektkurs_data-science2.pdf)
 - [Wahrscheinlichkeiten und Konfidenzintervalle](slides/probability-and-confidence-interval.pdf)
 - [Inferenzstatistik](slides/inference.pdf)
+- [Lineare Regression](slides/linear-regression.pdf)
