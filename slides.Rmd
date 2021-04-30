@@ -197,3 +197,9 @@ knitr::include_url("slides/inference.html")
 ```{r}
 knitr::include_url("slides/linear-regression.html")
 ```
+
+### 08: Dritter Teil der Case-Study 
+
+```{r}
+knitr::include_url("slides/VL_case-study-Teil3.html")
+```
