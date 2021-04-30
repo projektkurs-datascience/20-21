@@ -50,7 +50,10 @@ a, a > code {
 .pull-right ~ * {
   clear: both;
 }
-
+.big-table {
+  width: 30%;
+  height: 30%;
+}
 
 /* Custom boxes */
 .question {
