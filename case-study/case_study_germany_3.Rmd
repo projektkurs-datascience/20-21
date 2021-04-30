@@ -21,12 +21,12 @@ Im dritten Teil der Case Study untersuchen Sie mögliche Gründe für die region
 - Interpretation von Regressionskoeffizienten
 - Interpretation von Interaktionstermen
 
-Sie lernen, wie Sie eine lineare Regression dazu Nutzen können um mögliche Zusammenhängen zwischen der Arbeitslosigkeit und anderen Faktoren näher zu beleuchten. Jedoch lernen Sie auch die Grenzen der lineraren Regression kennen, insbesondere im Hinblick auf die Interpetation der Koeffizienten der Regression. Ergänzend hierzu erhalten Sie im 4. RTutor Problem Set Einblicke in die Zusammenhänge verschiedener gesamtwirtschaftlicher Faktoren und der Arbeitslosigkeit in den einzelnen Ländern der europäischen Union. Im 5. RTutor Problem Set werden Sie zusätzlich erfahren, welche Möglichkeiten wir in den Wirtschaftswissenschaften haben, um kausale Schlüsse ziehen zu können und im 6. Problem Set beschäftigen Sie sich mit den Möglichkeiten kausale Schlüsse aus Experimenten oder Beobachtungsdaten zu ziehen.
+Sie lernen, wie Sie eine lineare Regression dazu Nutzen können um mögliche Zusammenhängen zwischen der Arbeitslosigkeit und anderen Faktoren näher zu beleuchten. Jedoch lernen Sie auch die Grenzen der linearen Regression kennen, insbesondere im Hinblick auf die Interpetation der Koeffizienten der Regression. Ergänzend hierzu erhalten Sie im 4. RTutor Problem Set Einblicke in die Zusammenhänge verschiedener gesamtwirtschaftlicher Faktoren und der Arbeitslosigkeit in den einzelnen Ländern der europäischen Union. Im 5. RTutor Problem Set werden Sie zusätzlich erfahren, welche Möglichkeiten wir in den Wirtschaftswissenschaften haben, um kausale Schlüsse ziehen zu können und im 6. Problem Set beschäftigen Sie sich mit den Möglichkeiten kausale Schlüsse aus Experimenten oder Beobachtungsdaten zu ziehen.
 
 
 # Daten und Pakete laden
 
-Nachdem wir uns im ersten Teil der Case Study alle Daten aus verschiedenen Datenquellen zusammengetragen und in R eingelesen haben, wurden diese im zweiten Teil visualisiert. In diesem dritten und letzten Teil der Case-Study wollen wir den Zusammenhang verschiedener Variablen untersuchen.
+Nachdem wir uns im ersten Teil der Case Study alle Daten aus verschiedenen Datenquellen zusammengetragen und in R eingelesen haben, wurden diese im zweiten Teil visualisiert und über die Korrelation deren Zusammenhang betrachtet. In diesem dritten und letzten Teil der Case-Study wollen wir den Zusammenhang verschiedener Variablen mittels Regressionsanalysen untersuchen.
 
 Hierzu laden wir uns die in Teil 1 erstellten Datensätze und die in Teil 2 gemachten Anpassungen:
 
@@ -50,13 +50,10 @@ gesamtdaten <- gesamtdaten %>%
          anteil_schulden = (Schulden_gesamt / bip)*100)
 ```
 
-# Korrelation
+Im zweiten Teil der Case-Study haben wir uns mit der Korrelation eine bivariate deskriptive Statistik angeschaut um den Zusammenhang einzelner Variablen miteinander zu veranschaulichen.
+Jedoch sind die Hauptanalysen, die in einer empirischen Ausarbeitung getätigt werden, keine Korrelationsmatrizen sondern Regressionstabellen. Dies liegt daran, dass Regressionskoeffizienten, anders als Korrelationen eine quantitative Interpretation zulassen. Weiterhin sind die Schätzer in der linearen Regression konsistent und unbiased + wir können den Zusammenhang zwischen mehreren Variablen betrachten. Für den Schätzer in der linearen Regression gilt BLUE (best linear unbiased estimator), was für die Korrelation nicht gilt.
 
-Wir hatten uns im letzten Teil der Case Study die Wachstumsrate des BIP berechnet und deren Verlauf seit 2000 durch eine Grafik visualisiert. In diesem Teil der Case Study wollen wir uns anschauen, wie die Arbeitslosenqutoe mit dem BIP Wachstum und dem Anteil der öffentlichen Schulden am BIP im Jahr 2017 für die einzelnen Landkreise in Deutschland zusammenhängen.
-
-Durch die bisherigen deskriptiven Analysen haben wir eine große Streuung des BIP pro Kopf innerhalb Deutschlands festgestellt. Insbesondere gab es einen deutlichen Unterschied zwischen ost- und westdeutschen Landkreisen. Im BIP Wachstum waren sich ost- und westdeutsche Landkreise im Durchschnitt recht ähnlich, doch auch hier gab es beträchtliche Unterschiede zwischen den Landkreisen. Um etwas darüber Aussagen zu können, wie die Arbeitslosenquote mit dem BIP-Wachstum oder der öffentlichen Verschuldung zusammenhängt, wollen wir uns die Korrelation der einzelnen Variablen untereinander näher anschauen.
-
-## Arbeitslosenquote und BIP-Wachstum
+In diesem dritten Teil der Case-Study wollen wir uns deshlab mit der linearen Regression beschäftigen.
 
 Zuerst berechnen wir uns die Variable `bip_wachstum`, wie im zweiten Teil der Case Study, und mergen diese zu unseren `gesamtdaten` für das Jahr 2017.
 
@@ -72,95 +69,6 @@ bip_wachstum <- bip_zeitreihe %>%
 
 gesamtdaten <- left_join(gesamtdaten, bip_wachstum, by = "Regionalschluessel")
 ```
-
-Anschließend erstellen wir ein Streudiagramm, welches die Arbeitslosenquote und das BIP Wachstum in den einzelnen Landkreisen einander gegenüberstellen. Hier erhalten wir erste Einblicke in die Korrelation der zwei Variablen.
-
-```{r, message=FALSE}
-gesamtdaten %>%
-  ggplot(aes(x = bip_wachstum, y = alo_quote)) + geom_point() + 
-  labs( x = "Wachstum des BIP %", 
-        y = "Arbeitslosenquote in %",
-        title = "Korrelation des BIP-Wachstums und der Arbeitslosenquote") +
-  theme_minimal()
-```
-
-Zuerst fallen uns die Ausreißer ins Auge. Insbesondere im positiven Bereich gibt es Landkreise, welche ein BIP-Wachstum von über 10% von 2016 nach 2017 aufweisen. Aber es gibt auch einen Landkreis, welcher eine Schumpfung des BIP um  über 9% aufweist. Solche Ausreißer können daher stammen, dass es in den jeweiligen Landkreisen im Vorjahr ein sehr niedriges BIP Wachstum (bspw. Landkreis Forchheim) oder ein sehr hohes BIP Wachstum (bspw. Landkreis Aschaffenburg) gab, d.h. wir sehen hier für vereinzelte Landkreise einen Aufholprozess aus dem vorherigen Jahr. Diese hohen oder niedrigen Wachstumsraten könnten natürlich durch vereinzelte Projekte auf Landkreisebene bedingt sein, werden sich jedoch im gesamten Datensatz mit 401 Landkreisen und kreisfreien Städten wieder relativieren. Durch unseren umfangreichen Datensatz können wir solche einzelnen Ausreißer auffangen. Wenn wir jedoch eine kleine Stichprobe aus diesem Datensatz extrahieren (z.B. nur alle ostdeutschen Landkreise), dann könnte schon ein deutlich anderes Bild des Zusammenhangs der beiden Variablen entstehen. Hier haben z.B. alle ostdeutschen Landkreise eine relativ große Streuung in den Arbeitslosenquoten, aber nur eine geringe Bandbreite beim BIP Wachstum.
-
-```{r, message=FALSE}
-gesamtdaten %>%
-  ggplot(aes(x = bip_wachstum, y = alo_quote, color = ost_name)) + geom_point() + 
-  labs( x = "Wachstum des BIP %", 
-        y = "Arbeitslosenquote in %",
-        title = "Korrelation des BIP-Wachstums und der Arbeitslosenquote",
-        color = "") +
-  theme_minimal()
-```
-
-Anhand der Punktewolke könnten wir abschätzen das der Zusammenhang zwischen der Arbeitslosenquote und dem BIP-Wachstum leicht negativ ist. D.h. Landkreise mit einer niedrigen Wachstumsrate haben tendenziell eine höhere Arbeitslosenquote in 2017. Jedoch scheint der Zusammenhang nicht besonders stark zu sein.
-
-Wenn wir uns die Korrelation zwischen den zwei Variablen ausgeben lassen, so erhalten wir eine negative Korrelation von:
-
-```{r}
-cor(gesamtdaten$alo_quote, gesamtdaten$bip_wachstum,use = "pairwise.complete.obs")
-```
-
-D.h. der von uns in der Grafik vermutete negative Zusammenhang zwischen der Arbeitslosenquote und dem BIP-Wachstum wird durch die Analyse der Korrelation bestätigt.
-
-## Arbeitslosenquote und Verschuldung pro Person
-
-Die Korrelation der Arbeitslosenquote und dem Anteil der öffentlichen Schulden möchten wir nun auch über ein Streudiagramm untersuchen.
-
-```{r}
-gesamtdaten %>%
-  ggplot(aes(x = anteil_schulden, y = alo_quote)) + geom_point() + 
-  labs( x = "Anteil der Schulden am BIP in %", 
-        y = "Arbeitslosenquote in %",
-        title = "Korrelation der öffentlichen Verschuldung und der Arbeitslosenquote") +
-  theme_minimal()
-```
-
-In diesem Schaubild scheint es einen positiven Zusammenhang zwischen der öffentlichen Verschuldung und der Arbeitslosenquote zu geben. D.h. Landkreise mit einer hohen Verschuldung im Verhältnis zu ihrem BIP haben tendenziell auch eine höhere Arbeitslosenquote. Jedoch ist es auch hier schwer zu sagen, wie groß die Korrelation tatsächlich ist. Wenn wir diese berechnen, so liegt sie bei:
-
-```{r}
-cor(gesamtdaten$alo_quote, gesamtdaten$anteil_schulden,use = "pairwise.complete.obs")
-```
-
-Wenn wir wieder eine kleine Stichprobe aus diesem Datensatz extrahieren, dann haben auch hier alle alle ostdeutschen Landkreise eine relativ große Streuung in den Arbeitslosenquoten, aber nur eine geringe Bandbreite in der öffentlichen Verschuldung.
- 
-```{r}
-gesamtdaten %>%
-  ggplot(aes(x = anteil_schulden, y = alo_quote, color=ost_name)) + geom_point() + 
-  labs( x = "Anteil der Schulden am BIP in %", 
-        y = "Arbeitslosenquote in %",
-        title = "Korrelation der öffentlichen Verschuldung und der Arbeitslosenquote",
-        color = "") +
-  theme_minimal()
-```
-
-## Interpretation der Korrelation
-
-Die Korrelation als Zahl an sich hat keine intuitive quantitative Interpretation. Sie ist eine univariate Repräsentation des Zusammenhangs zweier Variablen.
-Sie kann uns jedoch dabei helfen stark miteinander korrelierte Variablen in unserem Datensatz ausfindig zu machen. Dies ist insbesondere bei einer späteren Regressionsanalyse hilfreich, wenn es sich um mehrere erklärenden Variablen handelt (multiple lineare Regression), welche wir alle in unsere Regression einfließen lassen möchten. Wenn wir beispielsweise eine sehr hohe positive oder negative Korrelation zwischen den erklärenden Variablen `bip_wachstum` und `anteil_schulden` finden würden, dann sollten wir uns genau überlegen, ob wir beide Variablen in die Regression aufnehmen wollen, oder lieber auf eine verzichten. Denn durch stark miteinander korrelierte Variablen setzen wir uns dem Problem der [Multikolliniarität](https://de.wikipedia.org/wiki/Multikollinearit%C3%A4t) aus. Dadurch würden unsere Regressionskoeffizienten bei einer multiplen linearen Regression verzerrt. In unserem Fall ist die Korrelation der beiden Variablen jedoch gering:
-
-```{r}
-cor(gesamtdaten$bip_wachstum, gesamtdaten$anteil_schulden,use = "pairwise.complete.obs")
-```
-
-In einer empirischen Ausarbeitung werden Sie i.d.R. keine Schaubilder zur Korrelation der einzelnen Variablen sehen, sondern nur eine Tabelle in der die Korrelationen der Variablen untereinander abgetragen sind. Eine solche Tabelle können Sie auch einfach in R innerhalb des `tidyverse` erzeugen:
-
-```{r}
-korrelationen <- gesamtdaten %>%
-  select(bip_wachstum, anteil_schulden, alo_quote) %>%
-  correlate() %>% # Korrelationen erzeugen
-  rearrange() %>%  # Sortieren nach Korrelation
-  shave() # Oberen Teil der Tabelle abschneiden
-
-fashion(korrelationen)
-```
-
-
-In empirischen Ausarbeitungen wird die Korrelation meist nur berechnet um den Zusammenhang einzelner Variablen miteinander zu veranschaulichen.
-Jedoch sind die Hauptanalysen die getätigt werden keine Korrelationsmatrizen sondern Regressionstabellen. Dies liegt daran, dass Regressionskoeffizienten, anders als Korrelationen eine quantitative Interpretation zulassen. Weiterhin sind die Schätzer in der linearen Regression konsistent und unbiased + wir können den Zusammenhang zwischen mehreren Variablen betrachten. Für den Schätzer in der linearen Regression gilt BLUE (best linear unbiased estimator), was für die Korrelation nicht gilt. Wir wollen uns nun auch mit der linearen Regression beschäftigen.
 
 # Einfache lineare Regression
 
@@ -294,7 +202,7 @@ Um besser zu veranschaulichen was die Regression mit der interagierten Variable 
 Dafür beginnen wir mit der Konstanten: Diese ist für die Westdeutschen bei 3.12 (Spalte 3), was dem Wert der Konstanten aus unserem Interaktionsmodell (Spalte 2) entspricht. Bei den Ostdeutschen liegt diese bei 6,94 (Spalte 4), d.h. die durchschnittliche Arbeitslosenquote für einen unverschuldeten ostdeutschen Landkreis liegt deutlich höher als bei einem westdeutschen (3.12 Prozent vs. 6.94 Prozent).
 
 Können wir dies auch aus unserem Interaktionsmodell (Spalte 2) ablesen? **Ja!**
-In unserem Interaktionsmodell (Spalte 2) erhalten wir genau die gleiche Arbeitslosenquote wie im Sample Split für Ostdeutschland: Hierfür müssen wir die Dummy Variable `ost` und die Konstante aufaddieren: `ost1 + Constant` = `3.82 + 3.12` = `6.94`!
+In unserem Interaktionsmodell (Spalte 2) erhalten wir genau die gleiche Arbeitslosenquote wie im Sample Split für Ostdeutschland: Hierfür müssen wir die Dummy Variable `Ostdeutschland` und die Konstante aufaddieren: `Ostdeutschland + Constant` = `3.82 + 3.12` = `6.94`!
 
 Gleiches gilt auch für die jeweiligen Schätzer von `Anteil Schulden` und dessen Interaktion mit `Ostdeutschland`. Der Schätzer für die öffentlichen Schulden liegt bei 0.24, sowohl im Interaktionsmodell (Spalte 2) als auch in der Regression rein nur für westdeutsche Landkreise (Spalte 3). Dies bedeutet für alle westdeutschen Landkreise gibt es einen signifikanten Zusammenhang zwischen der öffentlichen Verschuldung und der Arbeitslosenquote. Bei den ostdeutschen Landkreisen ist dieser Zusammenhang deutlich kleiner und insignifikant (Spalte 4). Auch in unserem Interaktionsmodell können wir sehen, dass der Einfluss der öffentlichen Verschuldung für ostdeutsche Landkreise signifkant kleiner ist als für westdeutsche (um -0.18 Prozentpunkte, der Koeffizient von `Anteil Schulden * Ostdeutschland`).
 Wenn wir uns den Zusammenhang für alle ostdeutschen Landkreise berechnen möchten, dann ergibt sich dieser als `Anteil Schulden + Anteil Schulden * Ostdeutschland` = `0.24 + (-0.18)` = `0.06`. Durch Rundungsfehler können hier kleinere Abweichungen zwischen dem Koeffizienten aus dem Interaktionsmodell (Spalte 2) und dem Sample Split (Spalte 4) entstehen.

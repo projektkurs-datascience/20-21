@@ -777,7 +777,7 @@ D.h. wir würden hier komplett andere Schlüsse ziehen auf Basis dieser Stichpro
 ### Interpretation der Korrelation
 
 Die Korrelation als Zahl an sich hat keine intuitive quantitative Interpretation. Sie ist eine univariate Repräsentation des Zusammenhangs zweier Variablen.
-Sie kann uns jedoch dabei helfen stark miteinander korrelierte Variablen in unserem Datensatz ausfindig zu machen. Dies ist insbesondere bei einer späteren Regressionsanalyse hilfreich, wenn es sich um mehrere erklärenden Variablen handelt, welche wir alle in unsere Regression einfließen lassen möchten. Wenn wir beispielsweise eine sehr hohe positive oder negative Korrelation zwischen den erklärenden Variablen `bip_wachstum` und `anteil_schulden` finden würden, dann müssten wir uns überlegen, ob wir beide Variablen mit in unsere spätere Regression aufnehmen (bei einer multiplen linearen Regression). In unserem Fall ist die Korrelation der beiden Variablen jedoch gering:
+Sie kann uns jedoch dabei helfen stark miteinander korrelierte Variablen in unserem Datensatz ausfindig zu machen. Dies ist insbesondere bei einer späteren Regressionsanalyse hilfreich, wenn es sich um mehrere erklärenden Variablen handelt (multiple lineare Regression), welche wir alle in unsere Regression einfließen lassen möchten. Wenn wir beispielsweise eine sehr hohe positive oder negative Korrelation zwischen den erklärenden Variablen `bip_wachstum` und `anteil_schulden` finden würden, dann sollten wir uns genau überlegen, ob wir beide Variablen in die Regression aufnehmen wollen, oder lieber auf eine verzichten. Denn durch stark miteinander korrelierte Variablen setzen wir uns dem Problem der [Multikolliniarität](https://de.wikipedia.org/wiki/Multikollinearit%C3%A4t) aus. Dadurch würden unsere Regressionskoeffizienten bei einer multiplen linearen Regression verzerrt. In unserem Fall ist die Korrelation der beiden Variablen jedoch gering:
 
 ```{r}
 cor(gesamtdaten$bip_pro_kopf_wachstum, gesamtdaten$anteil_schulden,use = "pairwise.complete.obs")
@@ -803,7 +803,8 @@ korrelationen %>%
 ```
 
 
-In empirischen Ausarbeitungen wird nach der Analyse der Korrelation eine Analyse mittels Regression durchgeführt. Dies liegt daran, dass Regressionskoeffizienten, anders als Korrelationen eine quantitative Interpretation zulassen (und das wir den Zusammenhang zwischen mehreren Variablen betrachten können). 
+In empirischen Ausarbeitungen wird die Korrelation meist nur berechnet um den Zusammenhang einzelner Variablen miteinander zu veranschaulichen.
+Jedoch sind die Hauptanalysen die getätigt werden keine Korrelationsmatrizen sondern Regressionstabellen. Dies liegt daran, dass Regressionskoeffizienten, anders als Korrelationen eine quantitative Interpretation zulassen. Weiterhin sind die Schätzer in der linearen Regression konsistent und unbiased + wir können den Zusammenhang zwischen mehreren Variablen betrachten. Für den Schätzer in der linearen Regression gilt BLUE (best linear unbiased estimator), was für die Korrelation nicht gilt. 
 
 Der Analyse von Zusammenhängen mittels linearer Regression werden wir uns im dritten Teil der Case-Study widmen.
 
