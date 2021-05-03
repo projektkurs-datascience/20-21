@@ -154,6 +154,12 @@ knitr::include_url("slides/sample-vs-population.html")
 - Eine hervorragende Einführung finden Sie im Buch [ModernDive (Kapitel 7)](https://moderndive.com/7-sampling.html)
 - Eine etwas tiefgreifendere Einführung finden Sie in dem Buch [Learning Statistics with R (Kapitel 10)](https://learningstatisticswithr.com/lsr-0.6.pdf)
 
+### 16: Koeffizienten Interpretieren
+
+```{r}
+knitr::include_url("slides/Koeffizienten_Interpretieren.html")
+```
+
 ## Vorlesungsfolien der Live-Veranstaltungen {.tabset}
 
 ### 01: Einführung und Begrüßung
