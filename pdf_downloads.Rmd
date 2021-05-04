@@ -23,6 +23,7 @@ Hier finden Sie Folien als PDFs zum Download:
 - [Advanced R Markdown](slides/advanced_rmarkdown.pdf)
 - [Stichprobe vs. Grundgesamtheit](slides/sample-vs-population.pdf)
 - [Koeffizienten Interpretieren](slides/koeffizienten_interpretieren.pdf)
+- [Erste Eindrücke zu Kausalität](slides/causality1.pdf)
 
 # Vorlesungsvideos
 

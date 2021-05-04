@@ -160,6 +160,12 @@ knitr::include_url("slides/sample-vs-population.html")
 knitr::include_url("slides/Koeffizienten_Interpretieren.html")
 ```
 
+### 16: Kausalität 1
+
+```{r}
+knitr::include_url("slides/causality1.html")
+```
+
 ## Vorlesungsfolien der Live-Veranstaltungen {.tabset}
 
 ### 01: Einführung und Begrüßung
