@@ -169,7 +169,7 @@ knitr::include_url("slides/causality1.html")
 ### 17: Directed acyclic graphs
 
 ```{r}
-knitr::include_url("slides/DAGs_video.html")
+knitr::include_url("slides/DAG_video.html")
 ```
 
 ## Vorlesungsfolien der Live-Veranstaltungen {.tabset}
@@ -225,5 +225,5 @@ knitr::include_url("slides/VL_case-study-Teil3.html")
 ### 09: Kausalität in den Wirtschaftswissenschaften
 
 ```{r}
-knitr::include_url("slides/DAGs_slides.html")
+knitr::include_url("slides/DAG_slides.html")
 ```
