@@ -12,6 +12,7 @@ Die folgenden Bücher sind **kostenfrei**, können **online** gelesen werden und
 - Modern Dive: http://moderndive.com
 - R for Data Science: http://r4ds.had.co.nz
 - Introduction to Data Science: https://rafalab.github.io/dsbook/
+- Causal Inference: The Mixtape: https://mixtape.scunning.com/index.html
 
 
 ## Folien der Lehrvideos {.tabset}
