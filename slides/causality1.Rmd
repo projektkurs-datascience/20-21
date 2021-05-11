@@ -63,7 +63,7 @@ _Y_ sich danach verändert.
 
 ---
 
-## Beispielefür kausale Aussagen
+## Beispiele für kausale Aussagen
 
 - Feuerwerkskörper verursachen Lärm, sobald diese angezündet werden
 - Das Krähen des Hahn führt zum Sonnenaufgang
@@ -77,7 +77,7 @@ _Y_ sich danach verändert.
 
 --
 
-.alert[Hier benötigen Sie ein Modell -> Etwas was Sie hier in dieser Vorlesung lernen!]
+.alert[Hier benötigen Sie ein Modell -> Etwas was Sie in dieser Vorlesung lernen!]
 
 ---
 
@@ -113,7 +113,7 @@ include_graphics("./figs/psd-program-effect.png")
 
 .tiny[Quelle: Andrew Heiss, Programm evaluation (https://evalf20.classes.andrewheiss.com/content/01-content/)]
 
-.question[Wie _messen_ Sie den Effekt einer Intervention?]
+.question[Wie _messen_ wir den Effekt einer Intervention?]
 
 --
 

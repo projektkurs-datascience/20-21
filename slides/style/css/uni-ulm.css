@@ -47,13 +47,29 @@ a, a > code {
   float: right;
   width: 47%;
 }
+
+.pull-left-3 {
+  float: left;
+  width: 30%;
+  padding: 0 2.5% 0 0;
+}
+
+.pull-middle-3 {
+  float: left;
+  width: 30%;
+  padding: 0 2.5%;
+}
+
+.pull-right-3 {
+  float: right;
+  width: 30%;
+  padding: 0 0 0 2.5%;
+}
+
 .pull-right ~ * {
   clear: both;
 }
-.big-table {
-  width: 30%;
-  height: 30%;
-}
+
 
 /* Custom boxes */
 .question {

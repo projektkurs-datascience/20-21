@@ -166,6 +166,12 @@ knitr::include_url("slides/Koeffizienten_Interpretieren.html")
 knitr::include_url("slides/causality1.html")
 ```
 
+### 17: Directed acyclic graphs
+
+```{r}
+knitr::include_url("slides/DAGs_video.html")
+```
+
 ## Vorlesungsfolien der Live-Veranstaltungen {.tabset}
 
 ### 01: Einführung und Begrüßung
@@ -214,4 +220,10 @@ knitr::include_url("slides/linear-regression.html")
 
 ```{r}
 knitr::include_url("slides/VL_case-study-Teil3.html")
+```
+
+### 09: Kausalität in den Wirtschaftswissenschaften
+
+```{r}
+knitr::include_url("slides/DAGs_slides.html")
 ```
