@@ -51,3 +51,10 @@ Im dritten Teil der Case Study untersuchen Sie mögliche Gründe für die region
 - Interpretation von Regressionskoeffizienten
 
 Sie lernen, wie Sie eine lineare Regression dazu Nutzen können um mögliche Zusammenhängen zwischen der Arbeitslosigkeit und anderen Faktoren näher zu beleuchten. Jedoch lernen Sie auch die Grenzen der lineraren Regression kennen, insbesondere im Hinblick auf die Interpetation der Koeffizienten in einer linearen Regression. Ergänzend hierzu erhalten Sie im 4. RTutor Problem Set Einblicke in die Zusammenhänge verschiedener gesamtwirtschaftlicher Faktoren und der Arbeitslosigkeit in den einzelnen Ländern der europäischen Union. Im 5. und 6. RTutor Problem Set werden Sie zusätzlich erfahren, welche Möglichkeiten wir in den Wirtschaftswissenschaften haben, um kausale Schlüsse ziehen zu können.
+
+---
+
+## Randomisiertes Experiment
+
+In diesem Teil der Veranstaltung schauen wir uns ein Feldexperiment an und lernen, wann Schätzer kausal zu interpretieren sind
+

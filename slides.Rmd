@@ -228,3 +228,9 @@ knitr::include_url("slides/VL_case-study-Teil3.html")
 ```{r}
 knitr::include_url("slides/DAG_slides.html")
 ```
+
+### 10: Randomisiertes Experiment
+
+```{r}
+knitr::include_url("slides/Experiment_slides.html")
+```
