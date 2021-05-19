@@ -56,5 +56,10 @@ Sie lernen, wie Sie eine lineare Regression dazu Nutzen können um mögliche Zus
 
 ## Randomisiertes Experiment
 
-In diesem Teil der Veranstaltung schauen wir uns ein Feldexperiment an und lernen, wann Schätzer kausal zu interpretieren sind
+In diesem Teil der Veranstaltung schauen wir uns ein Feldexperiment an und lernen, wann Schätzer kausal zu interpretieren sind. Konkret replizieren wir teile der Arbeit des folgenden Artikels:
+
+Quelle: Baranov, Victoria, Sonia Bhalotra, Pietro Biroli, and Joanna Maselko. 2020. "Maternal Depression, Women's Empowerment, and Parental Investment: Evidence from a Randomized Controlled Trial." American Economic Review, 110 (3): 824-59.
+
+Die Inhalte der Übung umfassen die Erstellung einer geeigneten Balancing Tabelle mit einer kurzen Diskussion, wann eine solche Balancing Tabelle sinnvoll ist. Wir sehen hier schnell, dass Attrition ein Problem unserer Studie sein könnte, insbesondere da die Studie 7 Jahre dauert. 
+Weiterhin konzentrieren wir uns auf die Hauptergebnisse der Studie und zeigen diese mittels Grafiken (einfacher Vergleich der Mittelwerte) und erläutern, wie wir die gewonnen Ergebnisse auch mittels Regressionsanalyse replizieren können.
 
