@@ -63,3 +63,8 @@ Quelle: Baranov, Victoria, Sonia Bhalotra, Pietro Biroli, and Joanna Maselko. 20
 Die Inhalte der Übung umfassen die Erstellung einer geeigneten Balancing Tabelle mit einer kurzen Diskussion, wann eine solche Balancing Tabelle sinnvoll ist. Wir sehen hier schnell, dass Attrition ein Problem unserer Studie sein könnte, insbesondere da die Studie 7 Jahre dauert. 
 Weiterhin konzentrieren wir uns auf die Hauptergebnisse der Studie und zeigen diese mittels Grafiken (einfacher Vergleich der Mittelwerte) und erläutern, wie wir die gewonnen Ergebnisse auch mittels Regressionsanalyse replizieren können.
 
+---
+
+## Instrumentalvariablen - Eine Simulationsstudie
+
+Hier untersuchen wir die Wirkungsweise der Instrumentalvariablenregression anhand eines simulierten Datensatzes.
