@@ -80,7 +80,7 @@ Um das Prinzip der Instrumentalvariablenschätzung zu veranschaulichen wollen wi
 
 Durch Simulationsstudien können wir Probleme oder Unklarheiten untersuchen und bekommen dadurch eine Intuition vom Datengenerierungsprozess ich echten empirischen Datensätzen.
 
-```{r packages-data, include=FALSE}
+```{r}
 set.seed(2021)
 nrows <- 50000
 distance <- tibble(
