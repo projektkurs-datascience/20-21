@@ -192,7 +192,7 @@ thp %>%
          treat_factor = as.factor(ifelse(treat == 1, "Treatment", "Kontrolle"))) %>%
   ggplot(aes(x = name, y = depression, 
              color = treat_factor)) +
-  scale_color_manual(values = c("#D55E00", "#0072B2")) +
+  scale_color_manual(values = c("#0072B2", "E69F00")) +
   stat_summary(geom = "pointrange", 
                fun.data = "mean_se", 
                fun.args = list(mult=2.33)) +

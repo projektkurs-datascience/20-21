@@ -12,7 +12,7 @@ b) show what they will to in this course
 ## Problem Sets
 
 To get students up and running R quickly we do weekly assignments where they have to solve problem sets in R on their own. If you like R programming, take a look at the folder Problem-Sets. All Problem-Sets are created using [RTutor](https://github.com/skranz/RTutor).
-We provide only the Problem Sets and not the solution files to these problem sets. If you are an instructor and plan to build on our problem sets we are happy to send you the solution files. Just write [Sebastian Kranz](https://www.uni-ulm.de/mawi/mawi-wiwi/institut/mitarbeiter/skranz/) or [me](https://www.uni-ulm.de/mawi/stuko-wiwi/mitarbeiter/rieber/) an E-mail.
+We provide only the Problem Sets and not the solution files to these problem sets. If you are an instructor and plan to build on our problem sets we are happy to send you the solution files. Just write [me](https://www.uni-ulm.de/mawi/stuko-wiwi/mitarbeiter/rieber/) an E-mail.
 
 We also host these problem sets on RStudio Cloud. If you want to test the problem sets you can **create a free account** on RStudio Cloud and follow the links provided for each problem set below.
 
@@ -31,7 +31,7 @@ For more Problem Sets and a thourough description of RTutor visit: https://githu
 
 ## Running the Problem Sets in RStudio Cloud
 
-[Julius Düker](https://github.com/juduke/) made some introduction videos detailing 
+[Julius Düker](https://github.com/juduke/) made some introduction videos detailing
 
 - [How to run an interactive Problem set in the Browser using RStudio Cloud](https://cloudstore.uni-ulm.de/s/crmztKk4Ds4DKFm)
 - [How to run an interactive Problem Set in RMarkdown using RStudio Cloud](https://cloudstore.uni-ulm.de/s/wSRRcwzax53nCbt)
